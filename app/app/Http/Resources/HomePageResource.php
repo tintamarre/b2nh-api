@@ -13,10 +13,10 @@ class HomePageResource extends BaseResource
       
             'links' => [
                 'self' => URL::current(),
-                'explore_volcanoes' => route('api.volcanoes.index'),
-                'explore_volcano_events' => 'nope',
-                'explore_tsunami_events' => route('api.tsunamis.index'),
-                'explore_earthquake_events' => route('api.earthquakes.index')
+                'volcanoes' => route('api.volcanoes.index'),
+                'volcano_events' => route('api.volcano_events.index'),
+                'tsunami_events' => route('api.tsunami_events.index'),
+                'earthquake_events' => route('api.earthquake_events.index')
             ],
             ];
     }

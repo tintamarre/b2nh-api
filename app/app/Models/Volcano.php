@@ -11,10 +11,10 @@ class Volcano extends Model
         return $this->hasMany('App\Models\VolcanoEvent', "volcanoLocationId");
     }
 
-    public function earthquake_events()
-    {
-        return $this->hasMany('App\Models\EarthquakeEvent', "volcanoLocationId");
-    }
+    // public function earthquake_events()
+    // {
+    //     return $this->hasMany('App\Models\EarthquakeEvent', "volcanoLocationId");
+    // }
 
     public function tsunami_events()
     {
@@ -23,7 +23,7 @@ class Volcano extends Model
 
     public function getEventsCountTotal()
     {
-        return $this->volcano_events()->count() + $this->earthquake_events()->count() + $this->tsunami_events()->count();
+        return $this->volcano_events()->count() + $this->tsunami_events()->count();
     }
 
 

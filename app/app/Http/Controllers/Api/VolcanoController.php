@@ -12,8 +12,7 @@ class VolcanoController extends Controller
     {
         $volcanoes = Volcano::with([
             'volcano_events',
-            'tsunami_events',
-            'earthquake_events'
+            'tsunami_events'
         ])->get();
         
         // return $volcanoes;
@@ -24,8 +23,7 @@ class VolcanoController extends Controller
     {
         return Volcano::with([
             'volcano_events',
-            'tsunami_events',
-            'earthquake_events'
+            'tsunami_events'
         ])->find($volcano_id);
     }
 }

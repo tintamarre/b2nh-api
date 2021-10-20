@@ -25,35 +25,47 @@ $router->group(['prefix'=>'api/v1'], function () use ($router) {
         'uses' => 'Api\BaseController@index',
     ]);
 
-    $router->get('/volcanos/{volcano_id}', [
+    $router->get('/volcanoes/{volcano_id}', [
         'as' => 'api.volcanoes.show',
         'uses' => 'Api\VolcanoController@show',
     ]);
 
-    $router->get('/volcanos/', [
+    $router->get('/volcanoes/', [
         'as' => 'api.volcanoes.index',
         'uses' => 'Api\VolcanoController@index',
     ]);
 
-    $router->get('/tsunamis/', [
-        'as' => 'api.tsunamis.index',
-        'uses' => 'Api\TsunamiController@index',
+
+    $router->get('/volcano_events/{volcano_event_id}', [
+        'as' => 'api.volcano_events.show',
+        'uses' => 'Api\VolcanoEventController@show',
+    ]);
+
+    $router->get('/volcano_events/', [
+        'as' => 'api.volcano_events.index',
+        'uses' => 'Api\VolcanoEventController@index',
     ]);
 
 
-    $router->get('/tsunamis/{tsunami_id}', [
-        'as' => 'api.tsunamis.show',
-        'uses' => 'Api\TsunamiController@show',
+    $router->get('/tsunami_events/', [
+        'as' => 'api.tsunami_events.index',
+        'uses' => 'Api\TsunamiEventsController@index',
     ]);
 
 
-    $router->get('/earthquakes/', [
-        'as' => 'api.earthquakes.index',
-        'uses' => 'Api\EarthquakeController@index',
+    $router->get('/tsunami_events/{tsunami_event_id}', [
+        'as' => 'api.tsunami_events.show',
+        'uses' => 'Api\TsunamiEventsController@show',
     ]);
 
-    $router->get('/earthquakes/{earthquake_id}', [
-        'as' => 'api.earthquakes.show',
-        'uses' => 'Api\EarthquakeController@show',
+
+    $router->get('/earthquake_events/', [
+        'as' => 'api.earthquake_events.index',
+        'uses' => 'Api\EarthquakeEventsController@index',
+    ]);
+
+    $router->get('/earthquake_events/{earthquake_event_id}', [
+        'as' => 'api.earthquake_events.show',
+        'uses' => 'Api\EarthquakeEventsController@show',
     ]);
 });

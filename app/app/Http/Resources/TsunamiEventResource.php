@@ -8,7 +8,6 @@ class TsunamiEventResource extends BaseResource
     {
         return [
             'id' => $this->id,
-        ]
-
+        ];
     }
 }

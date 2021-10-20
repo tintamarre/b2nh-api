@@ -10,4 +10,14 @@ class VolcanoEvent extends Model
     {
         return $this->belongsTo('App\Models\Volcano', 'volcanoLocationId');
     }
+
+    public function earthquake_event()
+    {
+        return $this->belongsTo('App\Models\EarthquakeEvent', 'earthquakeEventId');
+    }
+
+    public function tsunami_event()
+    {
+        return $this->belongsTo('App\Models\TsunamiEvent', 'tsunamiEventId');
+    }
 }
