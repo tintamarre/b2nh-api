@@ -19,10 +19,7 @@ class VolcanoEventResource extends BaseResource
             'tsunamiEventId' => $this->tsunamiEventId,
             'volcanoLocationId' => $this->volcanoLocationId,
 
-            'earthquake_event' => new EarthquakeEventResource($this->whenLoaded('earthquake_event')),
-            'tsunami_event' => new TsunamiEventResource($this->whenLoaded('tsunami_event')),
-            'volcano' => new VolcanoResource($this->whenLoaded('volcano')),
-
+          
             'damageAmountOrder' => $this->damageAmountOrder,
             'damageMilliomDollars' => $this->damageMilliomDollars,
 
@@ -44,8 +41,15 @@ class VolcanoEventResource extends BaseResource
 
             'comments' => $this->comments,
 
+            'earthquake_event' => new EarthquakeEventResource($this->whenLoaded('earthquake_event')),
+            'tsunami_event' => new TsunamiEventResource($this->whenLoaded('tsunami_event')),
+            'volcano' => new VolcanoResource($this->whenLoaded('volcano')),
+
+            'tsunami_events' => TsunamiEventResource::collection($this->whenLoaded('tsunami_events')),
+            'earthquake_events' => EarthquakeEventResource::collection($this->whenLoaded('earthquake_events')),
+
             'links' => [
-                'self' => route('api.volcano_events.show', ['volcano_event_id' => $this->id])
+                'self' => route('api.volcano_events.show', ['volcano_event_id' => $this->id]),
                 ]
             
         ];

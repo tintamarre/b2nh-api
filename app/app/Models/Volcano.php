@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Volcano extends Model
 {
+    // HAS MANY
+
     public function volcano_events()
     {
         return $this->hasMany('App\Models\VolcanoEvent', "volcanoLocationId");
@@ -16,6 +18,8 @@ class Volcano extends Model
         return $this->hasMany('App\Models\TsunamiEvent', "volcanoLocationId");
     }
 
+
+ 
 
     // Attributes
     public function getEventsCountAttribute()

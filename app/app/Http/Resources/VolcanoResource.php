@@ -20,7 +20,6 @@ class VolcanoResource extends BaseResource
      
             'volcano_events' => VolcanoEventResource::collection($this->whenLoaded('volcano_events')),
             'tsunami_events' => TsunamiEventResource::collection($this->whenLoaded('tsunami_events')),
-            // 'earthquake_events' => EarthquakeEventResource::collection($this->whenLoaded('earthquake_events')),
 
             'external' => [
                 'external_map_url' => $this->external_map_url,

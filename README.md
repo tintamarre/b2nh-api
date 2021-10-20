@@ -1,22 +1,23 @@
 # B2NH
 
-## Documentation of the API (OpenAPI)
+## Documentation of the API (Swagger OpenAPI)
 
-- <http://b2nh.tintamarre.be/api-docs.html>
+- Default: <http://b2nh.tintamarre.be/api-docs.html>
+- Redoc: <http://b2nh.tintamarre.be/api-redoc.html>
 
 ## Launch dev environment
 - Clone the repo ;
 - `cd app`
 - `cp .env.example .env`
-- Edit .env to match your configuration
+- `vim .env` and edit it to match your configuration
 - `docker-compose up -d`
 - `docker-compose exec php php artisan migrate:fresh --seed`
 - Open your browser <http://127.0.0.1:9042>
 
 ## Tests
-Tests are written within `./app/tests/` directory. 
+Tests are written within `./app/tests/` directory.
 
 - `docker-compose exec php ./vendor/bin/phpunit`
 
 ## License
-- Licensed with GPLv3.
+- Licensed with GPLv3

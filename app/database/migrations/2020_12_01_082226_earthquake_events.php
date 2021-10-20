@@ -30,7 +30,6 @@ class EarthquakeEvents extends Migration
             $table->integer('intensity')->nullable();
 
             $table->integer('tsunamiEventId')->nullable();
-            // $table->integer('volcanoLocationId')->nullable();
             $table->integer('volcanoEventId')->nullable();
 
             $table->integer('damageAmountOrder')->nullable();

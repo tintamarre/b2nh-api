@@ -34,6 +34,21 @@
                 }
             }
         },
+        "/volcanoes/": {
+            "get": {
+                "tags": [
+                    "volcano"
+                ],
+                "summary": "Get Volcanoes informations",
+                "description": "Get Volcanoes paginated",
+                "operationId": "getVolcanoesInfo",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
         "/volcanoes/{volcano_id}": {
             "get": {
                 "tags": [

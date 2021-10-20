@@ -56,8 +56,18 @@ class TsunamiEventResource extends BaseResource
             'comments' => $this->comments,
 
             'latitude' => $this->latitude,
-            'longitude' => $this->longitude
+            'longitude' => $this->longitude,
 
+            'earthquake_event' => new EarthquakeEventResource($this->whenLoaded('earthquake_event')),
+            'volcano_event' => new VolcanoEventResource($this->whenLoaded('volcano_event')),
+            'volcano' => new VolcanoResource($this->whenLoaded('volcano')),
+
+            'volcano_events' => VolcanoEventResource::collection($this->whenLoaded('volcano_events')),
+            'earthquake_events' => EarthquakeEventResource::collection($this->whenLoaded('earthquake_events')),
+ 
+            'links' => [
+                'self' => route('api.tsunami_events.show', ['tsunami_event_id' => $this->id])
+                ]
 
         ];
     }
