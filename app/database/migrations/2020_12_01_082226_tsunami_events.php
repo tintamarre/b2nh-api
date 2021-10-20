@@ -15,6 +15,7 @@ class TsunamiEvents extends Migration
     {
         Schema::create('tsunami_events', function (Blueprint $table) {
             $table->id();
+            
             $table->string('locationName')->nullable();
             $table->string('country')->nullable();
             
@@ -47,27 +48,17 @@ class TsunamiEvents extends Migration
 
             $table->integer('injuries')->nullable();
             $table->integer('injuriesAmountOrder')->nullable();
-            // $table->integer('injuriesTotal')->nullable();
 
             $table->integer('maxWaterHeight')->nullable();
        
-
             $table->text('tsMtAbe')->nullable();
             
-
             $table->text('area')->nullable();
-
-
-            // $table->integer('vei')->nullable();
 
             $table->text('missing')->nullable();
             $table->text('missingAmountOrder')->nullable();
 
-
             $table->text('deaths')->nullable();
-
-            // $table->text('startDate')->nullable();
-            // $table->text('endDate')->nullable();
 
             $table->text('comments')->nullable();
 
