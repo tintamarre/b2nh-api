@@ -18,6 +18,32 @@ class VolcanoController extends Controller
         return VolcanoResource::collection($volcanoes);
     }
 
+
+
+    /**
+         * @OA\Get(
+         * path="/volcanoes/{volcano_id}",
+         * summary="Get Volcano information",
+         * description="Get Volcano",
+         * operationId="getVolcanoInfo",
+         * @OA\Parameter(
+         *          name="volcano_id",
+         *          description="ID of the volcano",
+         *          required=true,
+         *          in="path",
+         *          example="10102",
+         *          @OA\Schema(
+         *              type="string"
+         *          )
+         *      ),
+         * tags={"volcano"},
+         * @OA\Response(
+         *    response=200,
+         *    description="Success"
+         * )
+         * )
+         */
+ 
     public function show($volcano_id)
     {
         $volcano = Volcano::find($volcano_id);

@@ -1,8 +1,8 @@
 # B2NH
 
-## Documentations of the API
+## Documentation of the API (OpenAPI)
 
-- Not yet.
+- <http://b2nh.tintamarre.be/api-docs.html>
 
 ## Launch dev environment
 - Clone the repo ;

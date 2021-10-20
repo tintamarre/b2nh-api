@@ -1,0 +1,90 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": " API of B2NH",
+        "description": "This is the documentation of Api of B2NH",
+        "contact": {
+            "name": "Team of B2NH",
+            "email": "martin@erpicum.net"
+        },
+        "license": {
+            "name": "GNU General Public License v3",
+            "url": "https://www.gnu.org/licenses/gpl-3.0.en.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://b2nh.tintamarre.be/api/v1/"
+        }
+    ],
+    "paths": {
+        "/": {
+            "get": {
+                "tags": [
+                    "main"
+                ],
+                "summary": "Get the homepage of the API",
+                "description": "Links to API resources",
+                "operationId": "main",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/volcanoes/{volcano_id}": {
+            "get": {
+                "tags": [
+                    "volcano"
+                ],
+                "summary": "Get Volcano information",
+                "description": "Get Volcano",
+                "operationId": "getVolcanoInfo",
+                "parameters": [
+                    {
+                        "name": "volcano_id",
+                        "in": "path",
+                        "description": "ID of the volcano",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "10102"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "responses": {
+            "200": {
+                "description": "Success"
+            },
+            "403": {
+                "description": "Forbidden"
+            },
+            "404": {
+                "description": "Resource Not Found"
+            }
+        },
+        "securitySchemes": {
+            "bearer": {
+                "type": "http",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "main",
+            "description": "Everything about"
+        }
+    ]
+}

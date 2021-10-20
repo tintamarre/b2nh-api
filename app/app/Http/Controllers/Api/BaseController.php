@@ -9,42 +9,21 @@ use App\Http\Resources\HomePageResource;
 class BaseController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+    * @OA\Get(
+    * path="/",
+    * summary="Get the homepage of the API",
+    * description="Links to API resources",
+    * operationId="main",
+    * tags={"main"},
+    * @OA\Response(
+    *    response=200,
+    *    description="Success",
+    * )
+    * )
+    * )
+    */
     public function index()
     {
         return new HomePageResource('Hello world!');
     }
 }
-
-
-/**
-     * @OA\Get(
-     * path="/ECLI/BE/{court_acronym}",
-     * summary="Get Court information",
-     * description="Get Court",
-     * operationId="GetCourtInfo",
-     * @OA\Parameter(
-     *          name="court_acronym",
-     *          description="Court acronym",
-     *          required=true,
-     *          in="path",
-     *          example="CASS",
-     *          @OA\Schema(
-     *              type="string"
-     *          )
-     *      ),
-     * tags={"court"},
-     * @OA\Response(
-     *    response=200,
-     *    description="Success"
-     * )
-     * )
-     */
-    // public function show($court_acronym)
-    // {
-    //     return new CourtResource(Court::whereAcronym($court_acronym)->with('category')
-    //         ->firstOrFail());
-    // }

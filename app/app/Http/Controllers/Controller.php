@@ -9,40 +9,24 @@ class Controller extends BaseController
     /**
      *
      * @OA\Info(
-     *  title="ECLI API of OpenJustice",
-     *  description="This is the documentation of ECLI Api of OpenJustice.be",
+     *  title=" API of B2NH",
+     *  description="This is the documentation of Api of B2NH",
      *  version="1.0.0",
      *    @OA\License(
      *     name="GNU General Public License v3",
      *     url="https://www.gnu.org/licenses/gpl-3.0.en.html"
      *   ),
      *   @OA\Contact(
-     *    email="team@openjustice.be",
-     *    name="Team of OpenJustice",
+     *    email="martin@erpicum.net",
+     *    name="Team of B2NH",
      *    )
      *   )
      *  )
      * @OA\Tag(
-     *     name="ECLI",
-     *     description="Everything about ECLI",
+     *     name="main",
+     *     description="Everything about",
      * ),
-     * @OA\Tag(
-     *     name="court",
-     *     description="Everything about Court",
-     * ),
-     *  @OA\Tag(
-     *     name="category",
-     *     description="Everything about category of courts",
-     * ),
-     *  @OA\Tag(
-     *     name="stats",
-     *     description="Everything about category of stats",
-     * ),
-     *  @OA\Tag(
-     *     name="utus",
-     *     description="Everything about Utus",
-     * ),
-     * @OA\Response(
+       * @OA\Response(
      *     response=200,
      *     description="Success",
      * ),
@@ -59,6 +43,6 @@ class Controller extends BaseController
      *     type="http",
      *     scheme="bearer",
      * ),
-     * @OA\Server(url="https://api-ecli.openjustice.lltl.be/api/v1")
+     * @OA\Server(url="http://b2nh.tintamarre.be/api/v1/")
      */
 }
