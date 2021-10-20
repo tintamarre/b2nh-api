@@ -17,6 +17,29 @@ class baseTest extends TestCase
     {
         $response = $this->call('GET', '/api/v1/');
         $response->assertStatus(200);
-        $response->assertSee('b2nh_api');
+        $response->assertSee(env('APP_NAME'));
+    }
+
+    /** @test */
+    public function randomApiTest()
+    {
+        $this->calling('/api/v1/volcano_events');
+        $this->calling('api/v1/volcano_events/18');
+        
+        $this->calling('/api/v1/volcanoes');
+        $this->calling('/api/v1/volcanoes/10102');
+        
+        $this->calling('/api/v1/tsunami_events');
+        $this->calling('api/v1/tsunami_events/23');
+        
+        $this->calling('/api/v1/earthquake_events');
+        $this->calling('/api/v1/earthquake_events/1');
+    }
+
+    private function calling($url)
+    {
+        $response = $this->call('GET', $url);
+        $response->assertStatus(200);
+        $response->assertSee('data');
     }
 }
