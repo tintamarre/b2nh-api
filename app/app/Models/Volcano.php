@@ -20,4 +20,15 @@ class Volcano extends Model
     {
         return $this->hasMany('App\Models\TsunamiEvent', "volcanoLocationId");
     }
+
+    public function getEventsCountTotal()
+    {
+        return $this->volcano_events()->count() + $this->earthquake_events()->count() + $this->tsunami_events()->count();
+    }
+
+
+    public function getExternalMapUrlAttribute()
+    {
+        return "https://www.google.com/maps/place/".$this->latitude.",".$this->longitude;
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Volcano;
+use App\Http\Resources\HomePageResource;
 
 class BaseController extends Controller
 {
@@ -14,14 +15,7 @@ class BaseController extends Controller
      */
     public function index()
     {
-        return response()->json([
-            'status' => 'success',
-            'menu_routes' => [
-                'explore_volcanoes' => route('api.volcanoes.index'),
-                'explore_tsunamis' => route('api.tsunamis.index'),
-                'explore_earthquakes' => route('api.earthquakes.index'),
-            ],
-        ]);
+        return new HomePageResource('Hello world!');
     }
 }
 
