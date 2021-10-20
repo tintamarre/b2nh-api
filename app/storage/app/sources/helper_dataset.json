@@ -1,0 +1,359 @@
+{
+    "damage": [
+        {
+            "id": "0",
+            "description": "None"
+        },
+        {
+            "id": "1",
+            "description": "Limited (<$1 million)"
+        },
+        {
+            "id": "2",
+            "description": "Moderate (~$1 to $5 million)"
+        },
+        {
+            "id": "3",
+            "description": "Severe (~>$5 to $24 million)"
+        },
+        {
+            "id": "4",
+            "description": "Extreme (~$25 million or more)"
+        }
+    ],
+    "houses": [
+        {
+            "id": "0",
+            "description": "None"
+        },
+        {
+            "id": "1",
+            "description": "Few (~1 to 50 houses)"
+        },
+        {
+            "id": "2",
+            "description": "Some (~51 to 100 houses)"
+        },
+        {
+            "id": "3",
+            "description": "Many (~101 to 1000 houses)"
+        },
+        {
+            "id": "4",
+            "description": "Very Many (~1001 or more houses)"
+        }
+    ],
+    "people": [
+        {
+            "id": "0",
+            "description": "None"
+        },
+        {
+            "id": "1",
+            "description": "Few (~1 to 50 people)"
+        },
+        {
+            "id": "2",
+            "description": "Some (~51 to 100 people)"
+        },
+        {
+            "id": "3",
+            "description": "Many (~101 to 1000 people)"
+        },
+        {
+            "id": "4",
+            "description": "Very Many (~1001 or more people)"
+        }
+    ],
+    "tsunamis": {
+        "regions": [
+            {
+                "id": "30",
+                "description": "Red Sea and Persian Gulf"
+            },
+            {
+                "id": "40",
+                "description": "Black Sea and Caspian Sea"
+            },
+            {
+                "id": "50",
+                "description": "Mediterranean Sea"
+            },
+            {
+                "id": "60",
+                "description": "Indian Ocean (including W. Australia and W. Indonesia)"
+            },
+            {
+                "id": "70",
+                "description": "Southeast Atlantic Ocean"
+            },
+            {
+                "id": "71",
+                "description": "Southwest Atlantic Ocean"
+            },
+            {
+                "id": "72",
+                "description": "Northwest Atlantic Ocean"
+            },
+            {
+                "id": "73",
+                "description": "Northeast Atlantic Ocean"
+            },
+            {
+                "id": "74",
+                "description": "Caribbean Sea"
+            },
+            {
+                "id": "75",
+                "description": "East Coast of United States and Canada"
+            },
+            {
+                "id": "76",
+                "description": "Gulf of Mexico"
+            },
+            {
+                "id": "77",
+                "description": "West Coast of Africa"
+            },
+            {
+                "id": "78",
+                "description": "Central Africa"
+            },
+            {
+                "id": "80",
+                "description": "Hawaii, Johnston Atoll, Midway I"
+            },
+            {
+                "id": "81",
+                "description": "E. Australia, New Zealand, South Pacific Is."
+            },
+            {
+                "id": "82",
+                "description": "New Caledonia, New Guinea, Solomon Is., Vanuatu"
+            },
+            {
+                "id": "83",
+                "description": "E. Indonesia and Malaysia"
+            },
+            {
+                "id": "84",
+                "description": "China, North and South Korea, Philippines, Taiwan"
+            },
+            {
+                "id": "85",
+                "description": "Japan"
+            },
+            {
+                "id": "86",
+                "description": "Kamchatka and Kuril Islands"
+            },
+            {
+                "id": "87",
+                "description": "Alaska (including Aleutian Islands)"
+            },
+            {
+                "id": "88",
+                "description": "West Coast of North and Central America"
+            },
+            {
+                "id": "89",
+                "description": "West Coast of South America"
+            }
+        ],
+        "causes": [
+            {
+                "id": "11",
+                "description": "Astronomical Tide"
+            },
+            {
+                "id": "1",
+                "description": "Earthquake"
+            },
+            {
+                "id": "3",
+                "description": "Earthquake and Landslide"
+            },
+            {
+                "id": "10",
+                "description": "Explosion"
+            },
+            {
+                "id": "8",
+                "description": "Landslide"
+            },
+            {
+                "id": "9",
+                "description": "Meteorological"
+            },
+            {
+                "id": "2",
+                "description": "Questionable Earthquake"
+            },
+            {
+                "id": "0",
+                "description": "Unknown"
+            },
+            {
+                "id": "6",
+                "description": "Volcano"
+            },
+            {
+                "id": "4",
+                "description": "Volcano and Earthquake"
+            },
+            {
+                "id": "7",
+                "description": "Volcano and Landslide"
+            }
+        ],
+        "validity": [
+            {
+                "id": "0",
+                "description": "Event that only caused a seiche or disturbance in an inland river"
+            },
+            {
+                "id": "1",
+                "description": "Very Doubtful Tsunami"
+            },
+            {
+                "id": "2",
+                "description": "Questionable Tsunami"
+            },
+            {
+                "id": "3",
+                "description": "Probable Tsunami"
+            },
+            {
+                "id": "4",
+                "description": "Definite Tsunami"
+            }
+        ]
+    },
+    "earthquakes": {
+        "intensity": [
+            {
+                "id": 1,
+                "description": "Not felt except by a very few under especially favorable circumstances."
+            },
+            {
+                "id": 2,
+                "description": "Felt only by a few persons at rest, especially on upper floors of buildings. Delicately suspended objects may swing."
+            },
+            {
+                "id": 3,
+                "description": "Felt quite noticeably indoors, especially on upper floors of buildings, but many people do not recognize it as an earthquake. Standing motor cars may rock slightly. Vibration like passing truck. Duration estimated."
+            },
+            {
+                "id": 4,
+                "description": "During the day felt indoors by many, outdoors by few. At night some awakened. Dishes, windows, and doors disturbed; walls make creaking sound. Sensation like heavy truck striking building. Standing motorcars rock noticeably."
+            },
+            {
+                "id": 5,
+                "description": "Felt by nearly everyone; many awakened. Some dishes, windows, etc., broken; a few instances of cracked plaster; unstable objects overturned. Disturbance of trees, poles, and other tall objects sometimes noticed. Pendulum clocks may stop."
+            },
+            {
+                "id": 6,
+                "description": "Felt by all; many frightened and run outdoors. Some heavy furniture moved; a few instances of fallen plaster or damaged chimneys. Damage slight."
+            },
+            {
+                "id": 7,
+                "description": "Everybody runs outdoors. Damage negligible in buildings of good design and construction slight to moderate in well built ordinary structures; considerable in poorly built or badly designed structures. Some chimneys broken. Noticed by persons driving motor cars."
+            },
+            {
+                "id": 8,
+                "description": "Damage slight in specially designed structures; considerable in ordinary substantial buildings, with partial collapse; great in poorly built structures. Panel walls thrown out of frame structures. Fall of chimneys, factory stacks, columns, monuments, walls. Heavy furniture overturned. Sand and mud ejected in small amounts. Changes in well water. Persons driving motor cars disturbed."
+            },
+            {
+                "id": 9,
+                "description": "Damage considerable in specially designed structures; well-designed frame structures thrown out of plumb; great in substantial buildings, with partial collapse. Buildings shifted off foundations. Ground cracked conspicuously. Underground pipes broken."
+            },
+            {
+                "id": 10,
+                "description": "Some well-built wooden structures destroyed; most masonry and frame structures destroyed with foundations; ground badly cracked. Rails bent. Landslides considerable from river banks and steep slopes. Shifted sand and mud. Water splashed over banks."
+            },
+            {
+                "id": 11,
+                "description": "Few, if any (masonry), structures remain standing. Bridges destroyed. Broad fissures in ground. Underground pipelines completely out of service. Earth slumps and land slips in soft ground. Rails bent greatly."
+            },
+            {
+                "id": 12,
+                "description": "Damage total. Waves seen on ground surfaces. Lines of sight and level distorted. Objects thrown upward into the air."
+            }
+        ],
+        "regions": [
+            {
+                "id": "10",
+                "description": "Central, Western and S. Africa"
+            },
+            {
+                "id": "15",
+                "description": "Northern Africa"
+            },
+            {
+                "id": "20",
+                "description": "Antarctica"
+            },
+            {
+                "id": "30",
+                "description": "East Asia"
+            },
+            {
+                "id": "40",
+                "description": "Central Asia and Caucasus"
+            },
+            {
+                "id": "50",
+                "description": "Kamchatka and Kuril Islands"
+            },
+            {
+                "id": "60",
+                "description": "S. and SE. Asia and Indian Ocean"
+            },
+            {
+                "id": "70",
+                "description": "Atlantic Ocean"
+            },
+            {
+                "id": "80",
+                "description": "Bering Sea"
+            },
+            {
+                "id": "90",
+                "description": "Caribbean"
+            },
+            {
+                "id": "100",
+                "description": "Central America"
+            },
+            {
+                "id": "110",
+                "description": "Eastern Europe"
+            },
+            {
+                "id": "120",
+                "description": "Northern and Western Europe"
+            },
+            {
+                "id": "130",
+                "description": "Southern Europe"
+            },
+            {
+                "id": "140",
+                "description": "Middle East"
+            },
+            {
+                "id": "150",
+                "description": "North America and Hawaii"
+            },
+            {
+                "id": "160",
+                "description": "South America"
+            },
+            {
+                "id": "170",
+                "description": "Central and South Pacific"
+            }
+        ]
+    }
+}
+
