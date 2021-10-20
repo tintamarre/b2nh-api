@@ -47,7 +47,7 @@ class TsunamiEvents extends Migration
 
             $table->integer('injuries')->nullable();
             $table->integer('injuriesAmountOrder')->nullable();
-            $table->integer('injuriesTotal')->nullable();
+            // $table->integer('injuriesTotal')->nullable();
 
             $table->integer('maxWaterHeight')->nullable();
        
@@ -58,7 +58,7 @@ class TsunamiEvents extends Migration
             $table->text('area')->nullable();
 
 
-            $table->integer('vei')->nullable();
+            // $table->integer('vei')->nullable();
 
             $table->text('missing')->nullable();
             $table->text('missingAmountOrder')->nullable();
@@ -66,8 +66,8 @@ class TsunamiEvents extends Migration
 
             $table->text('deaths')->nullable();
 
-            $table->text('startDate')->nullable();
-            $table->text('endDate')->nullable();
+            // $table->text('startDate')->nullable();
+            // $table->text('endDate')->nullable();
 
             $table->text('comments')->nullable();
 
