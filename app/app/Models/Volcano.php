@@ -28,4 +28,18 @@ class Volcano extends Model
     {
         return "https://www.google.com/maps/place/".$this->latitude.",".$this->longitude;
     }
+
+    public function getExternalWikipediaUrlAttribute()
+    {
+        return "https://en.wikipedia.org/wiki/" . str_replace(' ', '_', $this->name);
+    }
+
+    public function getExternalImageUrlAttribute()
+    {
+        return null;
+        // Need to cache
+        // $url = "https://pixabay.com/api/?key=" . env('PIXABAY_API') . "&q=" . urlencode($this->name)  . "&image_type=photo";
+        // // SLOW
+        // return json_decode(file_get_contents($url))->hits[0]->webformatURL;
+    }
 }
