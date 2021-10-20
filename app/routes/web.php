@@ -49,23 +49,23 @@ $router->group(['prefix'=>'api/v1'], function () use ($router) {
 
     $router->get('/tsunami_events/', [
         'as' => 'api.tsunami_events.index',
-        'uses' => 'Api\TsunamiEventsController@index',
+        'uses' => 'Api\TsunamiEventController@index',
     ]);
 
 
     $router->get('/tsunami_events/{tsunami_event_id}', [
         'as' => 'api.tsunami_events.show',
-        'uses' => 'Api\TsunamiEventsController@show',
+        'uses' => 'Api\TsunamiEventController@show',
     ]);
 
 
     $router->get('/earthquake_events/', [
         'as' => 'api.earthquake_events.index',
-        'uses' => 'Api\EarthquakeEventsController@index',
+        'uses' => 'Api\EarthquakeEventController@index',
     ]);
 
     $router->get('/earthquake_events/{earthquake_event_id}', [
         'as' => 'api.earthquake_events.show',
-        'uses' => 'Api\EarthquakeEventsController@show',
+        'uses' => 'Api\EarthquakeEventController@show',
     ]);
 });

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\TsunamiEvent;
 
-class TsunamiController extends Controller
+class TsunamiEventController extends Controller
 {
     public function index()
     {
