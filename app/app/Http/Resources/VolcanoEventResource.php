@@ -38,7 +38,8 @@ class VolcanoEventResource extends BaseResource
 
             'deaths' => $this->deaths,
             'deathsAmountOrder' => $this->deathsAmountOrder,
-
+            
+            // Volcano Explosivity Index
             'vei' => $this->vei,
 
             'comments' => $this->comments
