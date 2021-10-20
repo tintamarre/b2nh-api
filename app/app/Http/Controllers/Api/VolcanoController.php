@@ -13,7 +13,7 @@ class VolcanoController extends Controller
         $volcanoes = Volcano::with([
             'volcano_events',
             'tsunami_events'
-        ])->get();
+        ])->paginate(50);
         
         return VolcanoResource::collection($volcanoes);
     }
