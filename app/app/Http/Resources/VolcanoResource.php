@@ -16,11 +16,11 @@ class VolcanoResource extends BaseResource
             'elevation' => $this->elevation,
             'morphology' => $this->morphology,
 
-            'events_count_total' => (int)$this->events_count_total,
+            'events_count' => (int)$this->events_count,
      
-            // 'volcano_events' => new VolcanoEventsResource($this->whenLoaded('volcano_events')),
-            // 'tsunami_events' => new TsunamiEventsResource($this->whenLoaded('tsunami_events')),
-            // 'earthquake_events' => new VolcanoEventsResource($this->whenLoaded('earthquake_events')),
+            'volcano_events' => VolcanoEventResource::collection($this->whenLoaded('volcano_events')),
+            'tsunami_events' => TsunamiEventResource::collection($this->whenLoaded('tsunami_events')),
+            // 'earthquake_events' => new VolcanoEventResource($this->whenLoaded('earthquake_events')),
      
 
             'links' => [

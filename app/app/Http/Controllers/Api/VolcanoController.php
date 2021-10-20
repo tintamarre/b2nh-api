@@ -15,15 +15,17 @@ class VolcanoController extends Controller
             'tsunami_events'
         ])->get();
         
-        // return $volcanoes;
         return VolcanoResource::collection($volcanoes);
     }
 
     public function show($volcano_id)
     {
-        return Volcano::with([
+        $volcano = Volcano::find($volcano_id);
+        $volcano->load([
             'volcano_events',
             'tsunami_events'
-        ])->find($volcano_id);
+        ]);
+
+        return new VolcanoResource($volcano);
     }
 }

@@ -7,7 +7,7 @@ class TsunamiEventResource extends BaseResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
+            'id' => $this->id
         ];
     }
 }

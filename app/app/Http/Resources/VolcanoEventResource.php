@@ -42,8 +42,11 @@ class VolcanoEventResource extends BaseResource
             // Volcano Explosivity Index
             'vei' => $this->vei,
 
-            'comments' => $this->comments
-            
+            'comments' => $this->comments,
+
+            'links' => [
+                'self' => route('api.volcano_events.show', ['volcano_event_id' => $this->id])
+                ]
             
         ];
     }
