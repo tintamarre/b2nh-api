@@ -10,13 +10,13 @@ class HomePageResource extends BaseResource
     {
         return [
             'title' => env('APP_NAME'),
-            'routes' => [
-                'explore_volcanoes' => route('api.volcanoes.index'),
-                'explore_tsunamis' => route('api.tsunamis.index'),
-                'explore_earthquakes' => route('api.earthquakes.index')
-            ],
+      
             'links' => [
                 'self' => URL::current(),
+                'explore_volcanoes' => route('api.volcanoes.index'),
+                'explore_volcano_events' => 'nope',
+                'explore_tsunami_events' => route('api.tsunamis.index'),
+                'explore_earthquake_events' => route('api.earthquakes.index')
             ],
             ];
     }
