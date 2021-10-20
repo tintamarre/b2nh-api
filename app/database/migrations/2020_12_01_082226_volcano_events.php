@@ -34,16 +34,16 @@ class VolcanoEvents extends Migration
 
         Schema::create('volcano_events', function (Blueprint $table) {
             $table->id();
-            $table->string('locationName')->nullable();
-            $table->string('country')->nullable();
+            // $table->string('locationName')->nullable();
+            // $table->string('country')->nullable();
             
             $table->text('year')->nullable();
             $table->integer('month')->nullable();
             $table->integer('day')->nullable();
 
-            $table->integer('regionCode')->nullable();
-            $table->integer('causeCode')->nullable();
-            $table->integer('eventValidity')->nullable();
+            // $table->integer('regionCode')->nullable();
+            // $table->integer('causeCode')->nullable();
+            // $table->integer('eventValidity')->nullable();
 
             $table->integer('earthquakeEventId')->nullable();
             $table->integer('tsunamiEventId')->nullable();
@@ -75,8 +75,8 @@ class VolcanoEvents extends Migration
 
             $table->text('comments')->nullable();
 
-            $table->text('latitude')->nullable();
-            $table->text('longitude')->nullable();
+            // $table->text('latitude')->nullable();
+            // $table->text('longitude')->nullable();
 
             $table->timestamps();
         });
