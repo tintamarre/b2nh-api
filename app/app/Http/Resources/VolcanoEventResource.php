@@ -21,21 +21,27 @@ class VolcanoEventResource extends BaseResource
 
           
             'damageAmountOrder' => $this->damageAmountOrder,
+            'damageAmountOrderLabel' => $this->damageAmountOrderLabel,
+
             'damageMilliomDollars' => $this->damageMilliomDollars,
 
             'houseDestroyed' => $this->houseDestroyed,
             'houseDestroyedAmountOrder' => $this->houseDestroyedAmountOrder,
+            'houseDestroyedAmountOrderLabel' => $this->houseDestroyedAmountOrderLabel,
 
             'injuries' => $this->injuries,
             'injuriesAmountOrder' => $this->injuriesAmountOrder,
+            'injuriesAmountOrderLabel' => $this->injuriesAmountOrderLabel,
+
             'injuriesTotal' => $this->injuriesTotal,
 
             'missing' => $this->missing,
             'missingAmountOrder' => $this->missingAmountOrder,
+            'missingAmountOrderLabel' => $this->missingAmountOrderLabel,
 
             'deaths' => $this->deaths,
             'deathsAmountOrder' => $this->deathsAmountOrder,
-            
+            'deathsAmountOrderLabel' => $this->deathsAmountOrderLabel,
             // Volcano Explosivity Index
             'vei' => $this->vei,
 

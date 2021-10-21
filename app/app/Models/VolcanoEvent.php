@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class VolcanoEvent extends Model
+class VolcanoEvent extends BaseEventModel
 {
     // BELONGS TO
     public function volcano()
@@ -28,8 +28,37 @@ class VolcanoEvent extends Model
         return $this->hasMany('App\Models\EarthquateEvent', "earthquakeEventId");
     }
 
-    public function tsunami_events()
+    public function getDamageAmountOrderLabelAttribute()
     {
-        return $this->hasMany('App\Models\TsunamiEvent', 'tsunamiEventId');
+        $key = 'damage' .'_'. $this->damageAmountOrder;
+
+        return $this->getLabelFromHelper($key);
+    }
+    
+    public function getDeathsAmountOrderLabelAttribute()
+    {
+        $key = 'people' . '_'. $this->deathsAmountOrder;
+
+        return $this->getLabelFromHelper($key);
+    }
+
+    public function getInjuriesAmountOrderLabelAttribute()
+    {
+        $key = 'people' .'_'. $this->injuriesAmountOrder;
+
+        return $this->getLabelFromHelper($key);
+    }
+    public function getHousesDestroyedAmountOrderLabelAttribute()
+    {
+        $key = 'house' . '_'. $this->housesDestroyedAmountOrder;
+
+        return $this->getLabelFromHelper($key);
+    }
+
+    public function getMissingAmountOrderLabelAttribute()
+    {
+        $key = 'people' .'_'. $this->missingAmountOrder;
+
+        return $this->getLabelFromHelper($key);
     }
 }

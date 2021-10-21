@@ -41,15 +41,24 @@ class Volcano extends Model
     public function getExternalImageUrlAttribute()
     {
         $key = class_basename($this) . '_' . $this->id;
-       
-        return null;
+        
         return Cache::rememberForever($key, function () {
             $url = "https://pixabay.com/api/?key=" . env('PIXABAY_API') . "&q=" . urlencode($this->name)  . "&image_type=photo";
-            $result = json_decode(file_get_contents($url));
+            $content = @file_get_contents($url);
+            if ($content === false) {
+                Cache::forget($key);
+                return null;
+            } else {
+                $result = json_decode($content);
 
-            if (!empty($result->hits)) {
-                return $result->hits[0]->webformatURL;
+                if (!empty($result->hits)) {
+                    return $result->hits[0]->webformatURL;
+                } else {
+                    return 'not_found';
+                }
             }
+
+            
             
             return null;
         });
