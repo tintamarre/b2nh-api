@@ -20,27 +20,34 @@ class TsunamiEventResource extends BaseResource
             'second' => $this->second,
 
             'regionCode' => $this->regionCode,
+            'regionCodeLabel' => $this->regionCodeLabel,
             'causeCode' => $this->causeCode,
+            'causeCodeLabel' => $this->causeCodeLabel,
             'eventValidity' => $this->eventValidity,
+            'eventValidityLabel' => $this->eventValidityLabel,
 
             'earthquakeEventId' => $this->earthquakeEventId,
             'volcanoLocationId' => $this->volcanoLocationId,
             'volcanoEventId' => $this->volcanoEventId,
 
             'damageAmountOrder' => $this->damageAmountOrder,
+            'damageAmountOrderLabel' => $this->damageAmountOrderLabel,
             'damageMillionsDollars' => $this->damageMillionsDollars,
    
             'deathsAmountOrder' => $this->deathsAmountOrder,
+            'deathsAmountOrderLabel' => $this->deathsAmountOrderLabel,
 
             'housesDestroyed' => $this->housesDestroyed,
             'housesDestroyedAmountOrder' => $this->housesDestroyedAmountOrder,
+            'housesDestroyedAmountOrderLabel' => $this->housesDestroyedAmountOrderLabel,
 
             'housesDamaged' => $this->housesDamaged,
             'housesDamagedAmountOrder' => $this->housesDamagedAmountOrder,
-
+            'housesDamagedAmountOrderLabel' => $this->housesDamagedAmountOrderLabel,
 
             'injuries' => $this->injuries,
             'injuriesAmountOrder' => $this->injuriesAmountOrder,
+            'injuriesAmountOrderLabel' => $this->injuriesAmountOrderLabel,
 
             'maxWaterHeight' => $this->maxWaterHeight,
        
@@ -50,6 +57,7 @@ class TsunamiEventResource extends BaseResource
 
             'missing' => $this->missing,
             'missingAmountOrder' => $this->missingAmountOrder,
+            'missingAmountOrderLabel' => $this->missingAmountOrderLabel,
 
             'deaths' => $this->deaths,
 

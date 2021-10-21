@@ -24,24 +24,31 @@ class EarthquakeEventResource extends BaseResource
 
 
             'regionCode' => $this->regionCode,
+            'regionCodeLabel' => $this->regionCodeLabel,
 
             'intensity' => $this->intensity,
+            'intensityLabel' => $this->intensityLabel,
 
             'tsunamiEventId' => $this->tsunamiEventId,
             'volcanoEventId' => $this->volcanoEventId,
 
             'damageAmountOrder' => $this->damageAmountOrder,
+            'damageAmountOrderLabel' => $this->damageAmountOrderLabel,
             'damageMillionsDollars' => $this->damageMillionsDollars,
    
             'deathsAmountOrder' => $this->deathsAmountOrder,
+            'deathsAmountOrderLabel' => $this->deathsAmountOrderLabel,
 
             'housesDestroyed' => $this->housesDestroyed,
             'housesDestroyedAmountOrder' => $this->housesDestroyedAmountOrder,
+            'housesDestroyedAmountOrderLabel' => $this->housesDestroyedAmountOrderLabel,
+
             'housesDestroyedTotal' => $this->housesDestroyedTotal,
 
             
             'housesDamaged' => $this->housesDamaged,
             'housesDamagedAmountOrder' => $this->housesDamagedAmountOrder,
+            'housesDamagedAmountOrderLabel' => $this->housesDamagedAmountOrderLabel,
             'housesDamagedTotal' => $this->housesDamagedTotal,
             
             'eqMagnitude' => $this->eqMagnitude,
@@ -50,12 +57,14 @@ class EarthquakeEventResource extends BaseResource
 
             'injuries' => $this->injuries,
             'injuriesAmountOrder' => $this->injuriesAmountOrder,
+            'injuriesAmountOrderLabel' => $this->injuriesAmountOrderLabel,
             'injuriesTotal' => $this->injuriesTotal,
 
             'area' => $this->area,
 
             'missing' => $this->missing,
             'missingAmountOrder' => $this->missingAmountOrder,
+            'missingAmountOrderLabel' => $this->missingAmountOrderLabel,
             'missingTotal' => $this->missingTotal,
 
             'deaths' => $this->deaths,
