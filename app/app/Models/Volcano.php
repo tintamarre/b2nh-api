@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Cache;
 
 class Volcano extends Model
 {
@@ -17,7 +18,6 @@ class Volcano extends Model
     {
         return $this->hasMany('App\Models\TsunamiEvent', "volcanoLocationId");
     }
-
 
  
 
@@ -40,10 +40,18 @@ class Volcano extends Model
 
     public function getExternalImageUrlAttribute()
     {
+        $key = class_basename($this) . '_' . $this->id;
+       
         return null;
-        // Need to cache
-        // $url = "https://pixabay.com/api/?key=" . env('PIXABAY_API') . "&q=" . urlencode($this->name)  . "&image_type=photo";
-        // // SLOW
-        // return json_decode(file_get_contents($url))->hits[0]->webformatURL;
+        return Cache::rememberForever($key, function () {
+            $url = "https://pixabay.com/api/?key=" . env('PIXABAY_API') . "&q=" . urlencode($this->name)  . "&image_type=photo";
+            $result = json_decode(file_get_contents($url));
+
+            if (!empty($result->hits)) {
+                return $result->hits[0]->webformatURL;
+            }
+            
+            return null;
+        });
     }
 }

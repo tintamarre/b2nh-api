@@ -18,6 +18,10 @@ class BaseResource extends JsonResource
                 
                 'api_version' => 'v1',
                 'api_base' => route('api.base_api'),
+                'api_documentation' => [
+                    'swagger' => 'http://b2nh.tintamarre.be/api-docs.html',
+                    'redoc' => 'http://b2nh.tintamarre.be/api-redoc.html',
+                ],
                 'source_code' => env('SOURCE_CODE'),
                 'author' => '❤️ ' . env('APP_NAME'),
                 'disclaimer' => '⚠ What you are seeing is raw technical data formatted in a non human readable way. It is not meant to be user-friendly. To access a more user-friendy service, please visit ...',

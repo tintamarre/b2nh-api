@@ -10,7 +10,7 @@ class TsunamiEventController extends Controller
 {
     public function index()
     {
-        return TsunamiEventResource::collection(TsunamiEvent::paginate(50));
+        return TsunamiEventResource::collection(TsunamiEvent::paginate(10));
     }
 
     public function show($tsunami_event_id)

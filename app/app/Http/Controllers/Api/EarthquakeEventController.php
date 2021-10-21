@@ -10,7 +10,7 @@ class EarthquakeEventController extends Controller
 {
     public function index()
     {
-        return EarthquakeEventResource::collection(EarthquakeEvent::paginate(50));
+        return EarthquakeEventResource::collection(EarthquakeEvent::paginate(10));
     }
 
     public function show($earthquake_event_id)

@@ -10,7 +10,7 @@ class VolcanoEventController extends Controller
 {
     public function index()
     {
-        return VolcanoEventResource::collection(VolcanoEvent::paginate(50));
+        return VolcanoEventResource::collection(VolcanoEvent::paginate(10));
     }
 
     public function show($volcano_event_id)

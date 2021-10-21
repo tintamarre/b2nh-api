@@ -14,23 +14,7 @@ class VolcanoEvents extends Migration
     public function up()
     {
 
-        // "id": 2993,
-        // "year": 1498,
-        // "month": 9,
-        // "day": 20,
 
-        // "latitude": 33.5,
-        // "longitude": 135.2,
-
-        // "locationName": "NANKAIDO",
-        // "country": "JAPAN",
-
-        // "regionCode": 85,
-        // "causeCode": 1,
-        // "eventValidity": 4,
-        // "damageAmountOrder": 1,
-        // "comments": "Sept 20, 1498, 33.5 N, 135.2 E, magnitude 7.5  tsunami intensity 2. Yunomine Hot Spring stopped for 52 days. Hongu shrine wrecked. Nachi temple collapsed. Minato in Wakayama damaged by tsunami of several m in height. (reference #150)",
-        // "earthquakeEventId": 653
 
         Schema::create('volcano_events', function (Blueprint $table) {
             $table->id();
