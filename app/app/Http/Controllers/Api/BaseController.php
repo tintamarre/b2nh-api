@@ -14,7 +14,7 @@ class BaseController extends Controller
     * summary="Get the homepage of the API",
     * description="Links to API resources",
     * operationId="main",
-    * tags={"main"},
+    * tags={"Main"},
     * @OA\Response(
     *    response=200,
     *    description="Success",

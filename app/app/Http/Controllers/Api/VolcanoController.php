@@ -15,7 +15,7 @@ class VolcanoController extends Controller
     * summary="Get Volcanoes informations",
     * description="Get Volcanoes paginated",
     * operationId="getVolcanoesInfo",
-    * tags={"volcano"},
+    * tags={"Volcano"},
     * @OA\Response(
     *    response=200,
     *    description="Success"
@@ -49,7 +49,7 @@ class VolcanoController extends Controller
     *              type="string"
     *          )
     *      ),
-    * tags={"volcano"},
+    * tags={"Volcano"},
     * @OA\Response(
     *    response=200,
     *    description="Success"

@@ -22,7 +22,7 @@
         "/": {
             "get": {
                 "tags": [
-                    "main"
+                    "Main"
                 ],
                 "summary": "Get the homepage of the API",
                 "description": "Links to API resources",
@@ -34,10 +34,94 @@
                 }
             }
         },
+        "/earthquake_events/": {
+            "get": {
+                "tags": [
+                    "Earthquake"
+                ],
+                "summary": "Get Earthquake events informations",
+                "description": "Get Earthquake events paginated",
+                "operationId": "getEarthquakeEventsInfo",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/earthquake_events/{earthquake_event_id}": {
+            "get": {
+                "tags": [
+                    "Earthquake"
+                ],
+                "summary": "Get Earthquake event information",
+                "description": "Get Earthquake Event",
+                "operationId": "getEarthquakeEventInfo",
+                "parameters": [
+                    {
+                        "name": "earthquake_event_id",
+                        "in": "path",
+                        "description": "ID of the event Earthquake",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "3"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/tsunami_events/": {
+            "get": {
+                "tags": [
+                    "Tsunami"
+                ],
+                "summary": "Get Tsunami events informations",
+                "description": "Get Tsunami events paginated",
+                "operationId": "getTsunamiEventsInfo",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/tsunami_events/{tsunami_event_id}": {
+            "get": {
+                "tags": [
+                    "Tsunami"
+                ],
+                "summary": "Get Tsunami Event information",
+                "description": "Get Tsunami event",
+                "operationId": "getTsunamiEventInfo",
+                "parameters": [
+                    {
+                        "name": "tsunami_event_id",
+                        "in": "path",
+                        "description": "ID of the event tsunami",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "8"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
         "/volcanoes/": {
             "get": {
                 "tags": [
-                    "volcano"
+                    "Volcano"
                 ],
                 "summary": "Get Volcanoes informations",
                 "description": "Get Volcanoes paginated",
@@ -52,7 +136,7 @@
         "/volcanoes/{volcano_id}": {
             "get": {
                 "tags": [
-                    "volcano"
+                    "Volcano"
                 ],
                 "summary": "Get Volcano information",
                 "description": "Get Volcano",
@@ -67,6 +151,48 @@
                             "type": "string"
                         },
                         "example": "10102"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/volcano_events/": {
+            "get": {
+                "tags": [
+                    "Eruption"
+                ],
+                "summary": "Get Volcano events informations",
+                "description": "Get Volcano events paginated",
+                "operationId": "getVolcanoEventsInfo",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/volcano_events/{volcano_event_id}": {
+            "get": {
+                "tags": [
+                    "Eruption"
+                ],
+                "summary": "Get Volcano event information",
+                "description": "Get Volcano Event",
+                "operationId": "getVolcanoEventInfo",
+                "parameters": [
+                    {
+                        "name": "volcano_event_id",
+                        "in": "path",
+                        "description": "ID of the event volcano",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "6804"
                     }
                 ],
                 "responses": {
