@@ -12,19 +12,24 @@ class EarthquakeEventResource extends BaseResource
             'locationName' => $this->locationName,
             'country' => $this->country,
             
+            'latitude' => $this->latitude,
+            'longitude' => $this->longitude,
+
+            'regionCode' => $this->regionCode,
+            'regionCodeLabel' => $this->regionCodeLabel,
+
+            'area' => $this->area,
+
+            'eqMagnitude' => $this->eqMagnitude,
+            'eqDepth' => $this->eqDepth,
+            'eqMagUnk' => $this->eqMagUnk,
+
             'year' => $this->year,
             'month' => $this->month,
             'day' => $this->day,
             'hour' => $this->hour,
             'minute' => $this->minute,
             'second' => $this->second,
-
-            'latitude' => $this->latitude,
-            'longitude' => $this->longitude,
-
-
-            'regionCode' => $this->regionCode,
-            'regionCodeLabel' => $this->regionCodeLabel,
 
             'intensity' => $this->intensity,
             'intensityLabel' => $this->intensityLabel,
@@ -35,32 +40,22 @@ class EarthquakeEventResource extends BaseResource
             'damageAmountOrder' => $this->damageAmountOrder,
             'damageAmountOrderLabel' => $this->damageAmountOrderLabel,
             'damageMillionsDollars' => $this->damageMillionsDollars,
-   
-            'deathsAmountOrder' => $this->deathsAmountOrder,
-            'deathsAmountOrderLabel' => $this->deathsAmountOrderLabel,
+
 
             'housesDestroyed' => $this->housesDestroyed,
             'housesDestroyedAmountOrder' => $this->housesDestroyedAmountOrder,
             'housesDestroyedAmountOrderLabel' => $this->housesDestroyedAmountOrderLabel,
-
             'housesDestroyedTotal' => $this->housesDestroyedTotal,
-
-            
+           
             'housesDamaged' => $this->housesDamaged,
             'housesDamagedAmountOrder' => $this->housesDamagedAmountOrder,
             'housesDamagedAmountOrderLabel' => $this->housesDamagedAmountOrderLabel,
             'housesDamagedTotal' => $this->housesDamagedTotal,
-            
-            'eqMagnitude' => $this->eqMagnitude,
-            'eqDepth' => $this->eqDepth,
-            'eqMagUnk' => $this->eqMagUnk,
 
             'injuries' => $this->injuries,
             'injuriesAmountOrder' => $this->injuriesAmountOrder,
             'injuriesAmountOrderLabel' => $this->injuriesAmountOrderLabel,
             'injuriesTotal' => $this->injuriesTotal,
-
-            'area' => $this->area,
 
             'missing' => $this->missing,
             'missingAmountOrder' => $this->missingAmountOrder,
@@ -68,6 +63,8 @@ class EarthquakeEventResource extends BaseResource
             'missingTotal' => $this->missingTotal,
 
             'deaths' => $this->deaths,
+            'deathsAmountOrder' => $this->deathsAmountOrder,
+            'deathsAmountOrderLabel' => $this->deathsAmountOrderLabel,
 
             'comments' => $this->comments,
 

@@ -8,9 +8,6 @@ class TsunamiEventResource extends BaseResource
     {
         return [
             'id' => $this->id,
-    
-            'locationName' => $this->locationName,
-            'country' => $this->country,
             
             'year' => $this->year,
             'month' => $this-> month,
@@ -19,23 +16,29 @@ class TsunamiEventResource extends BaseResource
             'minute' => $this->minute,
             'second' => $this->second,
 
+            'locationName' => $this->locationName,
+            'country' => $this->country,
+            'area' => $this->area,
+
+            'latitude' => $this->latitude,
+            'longitude' => $this->longitude,
+            
+            'maxWaterHeight' => $this->maxWaterHeight,
+            'tsMtAbe' => $this->tsMtAbe,
+
             'regionCode' => $this->regionCode,
             'regionCodeLabel' => $this->regionCodeLabel,
+
             'causeCode' => $this->causeCode,
             'causeCodeLabel' => $this->causeCodeLabel,
+
             'eventValidity' => $this->eventValidity,
             'eventValidityLabel' => $this->eventValidityLabel,
-
-            'earthquakeEventId' => $this->earthquakeEventId,
-            'volcanoLocationId' => $this->volcanoLocationId,
-            'volcanoEventId' => $this->volcanoEventId,
 
             'damageAmountOrder' => $this->damageAmountOrder,
             'damageAmountOrderLabel' => $this->damageAmountOrderLabel,
             'damageMillionsDollars' => $this->damageMillionsDollars,
    
-            'deathsAmountOrder' => $this->deathsAmountOrder,
-            'deathsAmountOrderLabel' => $this->deathsAmountOrderLabel,
 
             'housesDestroyed' => $this->housesDestroyed,
             'housesDestroyedAmountOrder' => $this->housesDestroyedAmountOrder,
@@ -49,22 +52,20 @@ class TsunamiEventResource extends BaseResource
             'injuriesAmountOrder' => $this->injuriesAmountOrder,
             'injuriesAmountOrderLabel' => $this->injuriesAmountOrderLabel,
 
-            'maxWaterHeight' => $this->maxWaterHeight,
-       
-            'tsMtAbe' => $this->tsMtAbe,
-
-            'area' => $this->area,
-
             'missing' => $this->missing,
             'missingAmountOrder' => $this->missingAmountOrder,
             'missingAmountOrderLabel' => $this->missingAmountOrderLabel,
 
             'deaths' => $this->deaths,
+            'deathsAmountOrder' => $this->deathsAmountOrder,
+            'deathsAmountOrderLabel' => $this->deathsAmountOrderLabel,
 
             'comments' => $this->comments,
 
-            'latitude' => $this->latitude,
-            'longitude' => $this->longitude,
+            'earthquakeEventId' => $this->earthquakeEventId,
+            'volcanoLocationId' => $this->volcanoLocationId,
+            'volcanoEventId' => $this->volcanoEventId,
+
 
             'earthquake_event' => new EarthquakeEventResource($this->whenLoaded('earthquake_event')),
             'volcano_event' => new VolcanoEventResource($this->whenLoaded('volcano_event')),

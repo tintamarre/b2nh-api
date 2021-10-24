@@ -15,11 +15,9 @@ class VolcanoEventResource extends BaseResource
             'startDate' => $this->startDate,
             'endDate' => $this->endDate,
             
-            'earthquakeEventId' => $this->earthquakeEventId,
-            'tsunamiEventId' => $this->tsunamiEventId,
-            'volcanoLocationId' => $this->volcanoLocationId,
+                       // Volcano Explosivity Index
+            'vei' => $this->vei,
 
-          
             'damageAmountOrder' => $this->damageAmountOrder,
             'damageAmountOrderLabel' => $this->damageAmountOrderLabel,
 
@@ -32,7 +30,6 @@ class VolcanoEventResource extends BaseResource
             'injuries' => $this->injuries,
             'injuriesAmountOrder' => $this->injuriesAmountOrder,
             'injuriesAmountOrderLabel' => $this->injuriesAmountOrderLabel,
-
             'injuriesTotal' => $this->injuriesTotal,
 
             'missing' => $this->missing,
@@ -42,10 +39,13 @@ class VolcanoEventResource extends BaseResource
             'deaths' => $this->deaths,
             'deathsAmountOrder' => $this->deathsAmountOrder,
             'deathsAmountOrderLabel' => $this->deathsAmountOrderLabel,
-            // Volcano Explosivity Index
-            'vei' => $this->vei,
-
+ 
             'comments' => $this->comments,
+
+            'earthquakeEventId' => $this->earthquakeEventId,
+            'tsunamiEventId' => $this->tsunamiEventId,
+            'volcanoLocationId' => $this->volcanoLocationId,
+
 
             'earthquake_event' => new EarthquakeEventResource($this->whenLoaded('earthquake_event')),
             'tsunami_event' => new TsunamiEventResource($this->whenLoaded('tsunami_event')),
