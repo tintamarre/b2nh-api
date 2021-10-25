@@ -25,35 +25,35 @@ class EarthquakeEvents extends Migration
             $table->integer('minute')->nullable();
             $table->integer('second')->nullable();
 
-            $table->integer('regionCode')->nullable();
+            $table->string('regionCode')->nullable();
 
-            $table->integer('intensity')->nullable();
+            $table->string('intensity')->nullable();
 
             $table->integer('tsunamiEventId')->nullable();
             $table->integer('volcanoEventId')->nullable();
 
-            $table->integer('damageAmountOrder')->nullable();
-            $table->integer('damageMillionsDollars')->nullable();
+            $table->string('damageAmountOrder')->nullable();
+            $table->string('damageMillionsDollars')->nullable();
    
-            $table->integer('deathsAmountOrder')->nullable();
+            $table->string('deathsAmountOrder')->nullable();
 
-            $table->integer('housesDestroyed')->nullable();
-            $table->integer('housesDestroyedAmountOrder')->nullable();
-            $table->integer('housesDestroyedTotal')->nullable();
-
-            
-            $table->integer('housesDamaged')->nullable();
-            $table->integer('housesDamagedAmountOrder')->nullable();
-            $table->integer('housesDamagedTotal')->nullable();
+            $table->string('housesDestroyed')->nullable();
+            $table->string('housesDestroyedAmountOrder')->nullable();
+            $table->string('housesDestroyedTotal')->nullable();
 
             
-            $table->integer('eqMagnitude')->nullable();
-            $table->integer('eqDepth')->nullable();
-            $table->integer('eqMagUnk')->nullable();
+            $table->string('housesDamaged')->nullable();
+            $table->string('housesDamagedAmountOrder')->nullable();
+            $table->string('housesDamagedTotal')->nullable();
 
-            $table->integer('injuries')->nullable();
-            $table->integer('injuriesAmountOrder')->nullable();
-            $table->integer('injuriesTotal')->nullable();
+            
+            $table->string('eqMagnitude')->nullable();
+            $table->string('eqDepth')->nullable();
+            $table->string('eqMagUnk')->nullable();
+
+            $table->string('injuries')->nullable();
+            $table->string('injuriesAmountOrder')->nullable();
+            $table->string('injuriesTotal')->nullable();
 
 
             $table->text('area')->nullable();

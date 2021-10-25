@@ -24,24 +24,24 @@ class VolcanoEvents extends Migration
             $table->integer('tsunamiEventId')->nullable();
             $table->integer('volcanoLocationId')->nullable();
 
-            $table->integer('damageAmountOrder')->nullable();
-            $table->integer('damageMillionsDollars')->nullable();
+            $table->string('damageAmountOrder')->nullable();
+            $table->string('damageMillionsDollars')->nullable();
    
-            $table->integer('deathsAmountOrder')->nullable();
+            $table->string('deathsAmountOrder')->nullable();
 
-            $table->integer('housesDestroyed')->nullable();
-            $table->integer('housesDestroyedAmountOrder')->nullable();
+            $table->string('housesDestroyed')->nullable();
+            $table->string('housesDestroyedAmountOrder')->nullable();
 
-            $table->integer('injuries')->nullable();
-            $table->integer('injuriesAmountOrder')->nullable();
-            $table->integer('injuriesTotal')->nullable();
+            $table->string('injuries')->nullable();
+            $table->string('injuriesAmountOrder')->nullable();
+            $table->string('injuriesTotal')->nullable();
  
-            $table->integer('vei')->nullable();
+            $table->string('vei')->nullable();
 
-            $table->integer('missing')->nullable();
-            $table->integer('missingAmountOrder')->nullable();
+            $table->string('missing')->nullable();
+            $table->string('missingAmountOrder')->nullable();
 
-            $table->integer('deaths')->nullable();
+            $table->string('deaths')->nullable();
 
             $table->string('startDate')->nullable();
             $table->string('endDate')->nullable();

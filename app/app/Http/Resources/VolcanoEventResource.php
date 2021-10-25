@@ -19,6 +19,7 @@ class VolcanoEventResource extends BaseResource
             
             // Volcano Explosivity Index
             'volcano_explosivity_index' => (int)$this->vei,
+            'volcano_explosivity_index_details' => $this->veiDetails,
 
             'damageAmountOrder' => (int)$this->damageAmountOrder,
             'damageAmountOrderLabel' => $this->damageAmountOrderLabel,

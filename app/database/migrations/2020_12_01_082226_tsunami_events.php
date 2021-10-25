@@ -34,31 +34,31 @@ class TsunamiEvents extends Migration
             $table->integer('volcanoLocationId')->nullable();
             $table->integer('volcanoEventId')->nullable();
 
-            $table->integer('damageAmountOrder')->nullable();
+            $table->string('damageAmountOrder')->nullable();
             $table->integer('damageMillionsDollars')->nullable();
    
-            $table->integer('deathsAmountOrder')->nullable();
+            $table->string('deathsAmountOrder')->nullable();
 
-            $table->integer('housesDestroyed')->nullable();
-            $table->integer('housesDestroyedAmountOrder')->nullable();
+            $table->string('housesDestroyed')->nullable();
+            $table->string('housesDestroyedAmountOrder')->nullable();
 
-            $table->integer('housesDamaged')->nullable();
-            $table->integer('housesDamagedAmountOrder')->nullable();
+            $table->string('housesDamaged')->nullable();
+            $table->string('housesDamagedAmountOrder')->nullable();
 
 
-            $table->integer('injuries')->nullable();
-            $table->integer('injuriesAmountOrder')->nullable();
+            $table->string('injuries')->nullable();
+            $table->string('injuriesAmountOrder')->nullable();
 
-            $table->integer('maxWaterHeight')->nullable();
+            $table->string('maxWaterHeight')->nullable();
        
             $table->string('tsMtAbe')->nullable();
             
             $table->string('area')->nullable();
 
-            $table->integer('missing')->nullable();
-            $table->integer('missingAmountOrder')->nullable();
+            $table->string('missing')->nullable();
+            $table->string('missingAmountOrder')->nullable();
 
-            $table->integer('deaths')->nullable();
+            $table->string('deaths')->nullable();
 
             $table->mediumText('comments')->nullable();
 
