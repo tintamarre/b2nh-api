@@ -16,6 +16,8 @@ class TsunamiEventResource extends BaseResource
             'minute' => $this->minute,
             'second' => $this->second,
 
+            'dateTime' => $this->dateTime,
+
             'locationName' => $this->locationName,
             'country' => $this->country,
             'area' => $this->area,

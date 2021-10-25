@@ -9,6 +9,15 @@ class EarthquakeEventResource extends BaseResource
         return [
             'id' => $this->id,
 
+            'year' => $this->year,
+            'month' => $this->month,
+            'day' => $this->day,
+            'hour' => $this->hour,
+            'minute' => $this->minute,
+            'second' => $this->second,
+
+            'dateTime' => $this->dateTime,
+
             'locationName' => $this->locationName,
             'country' => $this->country,
             
@@ -24,13 +33,7 @@ class EarthquakeEventResource extends BaseResource
             'eqDepth' => $this->eqDepth,
             'eqMagUnk' => $this->eqMagUnk,
 
-            'year' => $this->year,
-            'month' => $this->month,
-            'day' => $this->day,
-            'hour' => $this->hour,
-            'minute' => $this->minute,
-            'second' => $this->second,
-
+        
             'intensity' => $this->intensity,
             'intensityLabel' => $this->intensityLabel,
 

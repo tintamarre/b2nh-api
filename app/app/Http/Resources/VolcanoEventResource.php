@@ -11,12 +11,14 @@ class VolcanoEventResource extends BaseResource
             'year' => $this->year,
             'month' => $this->month,
             'day' => $this->day,
-            
+
+            'dateTime' => $this->dateTime,
+  
             'startDate' => $this->startDate,
             'endDate' => $this->endDate,
             
             // Volcano Explosivity Index
-            'volcano_explosivity_index' => $this->vei,
+            'volcano_explosivity_index' => (int)$this->vei,
 
             'damageAmountOrder' => (int)$this->damageAmountOrder,
             'damageAmountOrderLabel' => $this->damageAmountOrderLabel,

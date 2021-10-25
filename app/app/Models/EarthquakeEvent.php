@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class EarthquakeEvent extends BaseEventModel
 {
     // BELONGS TO
-
     public function volcano_event()
     {
         return $this->belongsTo('App\Models\VolcanoEvent', 'volcanoEventId');

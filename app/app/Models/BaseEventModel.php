@@ -45,4 +45,10 @@ class BaseEventModel extends Model
         $slugCount = count($model->whereRaw("slug REGEXP '^{$slug}(-[0-9]*)?$'")->get());
         return ($slugCount > 0) ? "{$slug}-{$slugCount}" : $slug;
     }
+
+
+    public function getDateTimeAttribute()
+    {
+        return sprintf('%05d-%02d-%02d %02d:%02d:%02d', $this->year, $this->month, $this->day, $this->hour, $this->minute, $this->second);
+    }
 }

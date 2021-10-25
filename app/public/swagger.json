@@ -160,6 +160,21 @@
                 }
             }
         },
+        "/volcanoes_map/": {
+            "get": {
+                "tags": [
+                    "Volcano"
+                ],
+                "summary": "Get Volcanoes geographic informations",
+                "description": "Get Volcanoes lat/long",
+                "operationId": "getVolcanoesMapPositions",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
         "/volcano_events/": {
             "get": {
                 "tags": [

@@ -54,6 +54,6 @@ class EarthquakeEventController extends Controller
 
     public function show($earthquake_event_id)
     {
-        return new EarthquakeEventResource(EarthquakeEvent::with(['volcano_event','earthquake_event'])->find($earthquake_event_id));
+        return new EarthquakeEventResource(EarthquakeEvent::with(['volcano_event','tsunami_event'])->find($earthquake_event_id));
     }
 }
