@@ -38,29 +38,29 @@ class Volcano extends Model
         return "https://en.wikipedia.org/wiki/" . str_replace(' ', '_', $this->name);
     }
 
-    public function getExternalImageUrlAttribute()
-    {
-        $key = class_basename($this) . '_' . $this->id;
+    // public function getExternalImageUrlAttribute()
+    // {
+    //     $key = class_basename($this) . '_' . $this->id;
         
-        return Cache::rememberForever($key, function () {
-            $url = "https://pixabay.com/api/?key=" . env('PIXABAY_API') . "&q=" . urlencode($this->name)  . "&image_type=photo";
-            $content = @file_get_contents($url);
-            if ($content === false) {
-                Cache::forget($key);
-                return null;
-            } else {
-                $result = json_decode($content);
+    //     return Cache::rememberForever($key, function () {
+    //         $url = "https://pixabay.com/api/?key=" . env('PIXABAY_API') . "&q=" . urlencode($this->name)  . "&image_type=photo";
+    //         $content = @file_get_contents($url);
+    //         if ($content === false) {
+    //             Cache::forget($key);
+    //             return null;
+    //         } else {
+    //             $result = json_decode($content);
 
-                if (!empty($result->hits)) {
-                    return $result->hits[0]->webformatURL;
-                } else {
-                    return 'not_found';
-                }
-            }
+    //             if (!empty($result->hits)) {
+    //                 return $result->hits[0]->webformatURL;
+    //             } else {
+    //                 return 'not_found';
+    //             }
+    //         }
 
             
             
-            return null;
-        });
-    }
+    //         return null;
+    //     });
+    // }
 }

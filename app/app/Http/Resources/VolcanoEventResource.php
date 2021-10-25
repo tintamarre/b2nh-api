@@ -15,29 +15,29 @@ class VolcanoEventResource extends BaseResource
             'startDate' => $this->startDate,
             'endDate' => $this->endDate,
             
-                       // Volcano Explosivity Index
-            'vei' => $this->vei,
+            // Volcano Explosivity Index
+            'volcano_explosivity_index' => $this->vei,
 
-            'damageAmountOrder' => $this->damageAmountOrder,
+            'damageAmountOrder' => (int)$this->damageAmountOrder,
             'damageAmountOrderLabel' => $this->damageAmountOrderLabel,
 
             'damageMilliomDollars' => $this->damageMilliomDollars,
 
             'houseDestroyed' => $this->houseDestroyed,
-            'houseDestroyedAmountOrder' => $this->houseDestroyedAmountOrder,
+            'houseDestroyedAmountOrder' => (int)$this->houseDestroyedAmountOrder,
             'houseDestroyedAmountOrderLabel' => $this->houseDestroyedAmountOrderLabel,
 
             'injuries' => $this->injuries,
-            'injuriesAmountOrder' => $this->injuriesAmountOrder,
+            'injuriesAmountOrder' => (int)$this->injuriesAmountOrder,
             'injuriesAmountOrderLabel' => $this->injuriesAmountOrderLabel,
             'injuriesTotal' => $this->injuriesTotal,
 
             'missing' => $this->missing,
-            'missingAmountOrder' => $this->missingAmountOrder,
+            'missingAmountOrder' => (int)$this->missingAmountOrder,
             'missingAmountOrderLabel' => $this->missingAmountOrderLabel,
 
             'deaths' => $this->deaths,
-            'deathsAmountOrder' => $this->deathsAmountOrder,
+            'deathsAmountOrder' => (int)$this->deathsAmountOrder,
             'deathsAmountOrderLabel' => $this->deathsAmountOrderLabel,
  
             'comments' => $this->comments,

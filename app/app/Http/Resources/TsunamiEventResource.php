@@ -35,29 +35,29 @@ class TsunamiEventResource extends BaseResource
             'eventValidity' => $this->eventValidity,
             'eventValidityLabel' => $this->eventValidityLabel,
 
-            'damageAmountOrder' => $this->damageAmountOrder,
+            'damageAmountOrder' => (int)$this->damageAmountOrder,
             'damageAmountOrderLabel' => $this->damageAmountOrderLabel,
             'damageMillionsDollars' => $this->damageMillionsDollars,
    
 
             'housesDestroyed' => $this->housesDestroyed,
-            'housesDestroyedAmountOrder' => $this->housesDestroyedAmountOrder,
+            'housesDestroyedAmountOrder' => (int)$this->housesDestroyedAmountOrder,
             'housesDestroyedAmountOrderLabel' => $this->housesDestroyedAmountOrderLabel,
 
             'housesDamaged' => $this->housesDamaged,
-            'housesDamagedAmountOrder' => $this->housesDamagedAmountOrder,
+            'housesDamagedAmountOrder' => (int)$this->housesDamagedAmountOrder,
             'housesDamagedAmountOrderLabel' => $this->housesDamagedAmountOrderLabel,
 
             'injuries' => $this->injuries,
-            'injuriesAmountOrder' => $this->injuriesAmountOrder,
+            'injuriesAmountOrder' => (int)$this->injuriesAmountOrder,
             'injuriesAmountOrderLabel' => $this->injuriesAmountOrderLabel,
 
             'missing' => $this->missing,
-            'missingAmountOrder' => $this->missingAmountOrder,
+            'missingAmountOrder' => (int)$this->missingAmountOrder,
             'missingAmountOrderLabel' => $this->missingAmountOrderLabel,
 
             'deaths' => $this->deaths,
-            'deathsAmountOrder' => $this->deathsAmountOrder,
+            'deathsAmountOrder' => (int)$this->deathsAmountOrder,
             'deathsAmountOrderLabel' => $this->deathsAmountOrderLabel,
 
             'comments' => $this->comments,

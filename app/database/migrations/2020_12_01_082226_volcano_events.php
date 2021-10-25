@@ -13,13 +13,10 @@ class VolcanoEvents extends Migration
      */
     public function up()
     {
-
-
-
         Schema::create('volcano_events', function (Blueprint $table) {
             $table->id();
             
-            $table->text('year')->nullable();
+            $table->string('year')->nullable();
             $table->integer('month')->nullable();
             $table->integer('day')->nullable();
 
@@ -38,20 +35,18 @@ class VolcanoEvents extends Migration
             $table->integer('injuries')->nullable();
             $table->integer('injuriesAmountOrder')->nullable();
             $table->integer('injuriesTotal')->nullable();
-
-            
+ 
             $table->integer('vei')->nullable();
 
-            $table->text('missing')->nullable();
-            $table->text('missingAmountOrder')->nullable();
-
+            $table->integer('missing')->nullable();
+            $table->integer('missingAmountOrder')->nullable();
 
             $table->integer('deaths')->nullable();
 
-            $table->text('startDate')->nullable();
-            $table->text('endDate')->nullable();
+            $table->string('startDate')->nullable();
+            $table->string('endDate')->nullable();
 
-            $table->text('comments')->nullable();
+            $table->mediumText('comments')->nullable();
 
             $table->timestamps();
         });

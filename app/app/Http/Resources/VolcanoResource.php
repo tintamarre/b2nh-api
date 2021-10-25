@@ -23,8 +23,8 @@ class VolcanoResource extends BaseResource
 
             'external' => [
                 'external_map_url' => $this->external_map_url,
-                'external_wikipedia_url' => $this->external_wikipedia_url,
-                'external_image' => $this->external_image_url
+                'external_wikipedia_url' => $this->external_wikipedia_url
+                // 'external_image' => $this->external_image_url
             ],
             'links' => [
                 'self' => route('api.volcanoes.show', ['volcano_id' => $this->id]),

@@ -37,33 +37,33 @@ class EarthquakeEventResource extends BaseResource
             'tsunamiEventId' => $this->tsunamiEventId,
             'volcanoEventId' => $this->volcanoEventId,
 
-            'damageAmountOrder' => $this->damageAmountOrder,
+            'damageAmountOrder' => (int)$this->damageAmountOrder,
             'damageAmountOrderLabel' => $this->damageAmountOrderLabel,
             'damageMillionsDollars' => $this->damageMillionsDollars,
 
 
             'housesDestroyed' => $this->housesDestroyed,
-            'housesDestroyedAmountOrder' => $this->housesDestroyedAmountOrder,
+            'housesDestroyedAmountOrder' => (int)$this->housesDestroyedAmountOrder,
             'housesDestroyedAmountOrderLabel' => $this->housesDestroyedAmountOrderLabel,
             'housesDestroyedTotal' => $this->housesDestroyedTotal,
            
             'housesDamaged' => $this->housesDamaged,
-            'housesDamagedAmountOrder' => $this->housesDamagedAmountOrder,
+            'housesDamagedAmountOrder' => (int)$this->housesDamagedAmountOrder,
             'housesDamagedAmountOrderLabel' => $this->housesDamagedAmountOrderLabel,
             'housesDamagedTotal' => $this->housesDamagedTotal,
 
             'injuries' => $this->injuries,
-            'injuriesAmountOrder' => $this->injuriesAmountOrder,
+            'injuriesAmountOrder' => (int)$this->injuriesAmountOrder,
             'injuriesAmountOrderLabel' => $this->injuriesAmountOrderLabel,
             'injuriesTotal' => $this->injuriesTotal,
 
             'missing' => $this->missing,
-            'missingAmountOrder' => $this->missingAmountOrder,
+            'missingAmountOrder' => (int)$this->missingAmountOrder,
             'missingAmountOrderLabel' => $this->missingAmountOrderLabel,
             'missingTotal' => $this->missingTotal,
 
             'deaths' => $this->deaths,
-            'deathsAmountOrder' => $this->deathsAmountOrder,
+            'deathsAmountOrder' => (int)$this->deathsAmountOrder,
             'deathsAmountOrderLabel' => $this->deathsAmountOrderLabel,
 
             'comments' => $this->comments,

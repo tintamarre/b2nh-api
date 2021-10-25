@@ -19,7 +19,7 @@ class TsunamiEvents extends Migration
             $table->string('locationName')->nullable();
             $table->string('country')->nullable();
             
-            $table->text('year')->nullable();
+            $table->string('year')->nullable();
             $table->integer('month')->nullable();
             $table->integer('day')->nullable();
             $table->integer('hour')->nullable();
@@ -51,19 +51,19 @@ class TsunamiEvents extends Migration
 
             $table->integer('maxWaterHeight')->nullable();
        
-            $table->text('tsMtAbe')->nullable();
+            $table->string('tsMtAbe')->nullable();
             
-            $table->text('area')->nullable();
+            $table->string('area')->nullable();
 
-            $table->text('missing')->nullable();
-            $table->text('missingAmountOrder')->nullable();
+            $table->integer('missing')->nullable();
+            $table->integer('missingAmountOrder')->nullable();
 
-            $table->text('deaths')->nullable();
+            $table->integer('deaths')->nullable();
 
-            $table->text('comments')->nullable();
+            $table->mediumText('comments')->nullable();
 
-            $table->text('latitude')->nullable();
-            $table->text('longitude')->nullable();
+            $table->string('latitude')->nullable();
+            $table->string('longitude')->nullable();
 
             $table->timestamps();
         });
