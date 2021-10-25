@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Volcano;
 use App\Http\Resources\VolcanoResource;
+use App\Http\Resources\VolcanoMapResource;
 
 class VolcanoController extends Controller
 {
@@ -66,5 +67,27 @@ class VolcanoController extends Controller
         ]);
 
         return new VolcanoResource($volcano);
+    }
+
+
+    /**
+    * @OA\Get(
+    * path="/volcanoes_map/",
+    * summary="Get Volcanoes geographic informations",
+    * description="Get Volcanoes lat/long",
+    * operationId="getVolcanoesMapPositions",
+    * tags={"Volcano"},
+    * @OA\Response(
+    *    response=200,
+    *    description="Success"
+    * )
+    * )
+    */
+
+    public function map()
+    {
+        $volcanoes = Volcano::all();
+        
+        return VolcanoMapResource::collection($volcanoes);
     }
 }

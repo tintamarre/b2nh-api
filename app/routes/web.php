@@ -35,6 +35,12 @@ $router->group(['prefix'=>'api/v1'], function () use ($router) {
         'uses' => 'Api\VolcanoController@index',
     ]);
 
+    $router->get('/volcanoes_map/', [
+        'as' => 'api.volcanoes.map',
+        'uses' => 'Api\VolcanoController@map',
+    ]);
+
+
 
     $router->get('/volcano_events/{volcano_event_id}', [
         'as' => 'api.volcano_events.show',
