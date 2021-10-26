@@ -23,16 +23,21 @@ class baseTest extends TestCase
     /** @test */
     public function randomApiTest()
     {
+        // TODO: Should route with route() facade and get random params
         $this->calling('/api/v1/volcano_events');
-        $this->calling('api/v1/volcano_events/18');
+        $this->calling('/api/v1/volcano_events?page=15');
+        $this->calling('/api/v1/volcano_events/18');
         
         $this->calling('/api/v1/volcanoes');
+        $this->calling('/api/v1/volcanoes?page=12');
         $this->calling('/api/v1/volcanoes/10102');
         
         $this->calling('/api/v1/tsunami_events');
-        $this->calling('api/v1/tsunami_events/23');
+        $this->calling('/api/v1/tsunami_events?page=14');
+        $this->calling('/api/v1/tsunami_events/23');
         
         $this->calling('/api/v1/earthquake_events');
+        $this->calling('/api/v1/earthquake_events?page=9');
         $this->calling('/api/v1/earthquake_events/1');
     }
 

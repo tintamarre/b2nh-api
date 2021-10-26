@@ -49,6 +49,10 @@ class VolcanoEvents extends Migration
             $table->mediumText('comments')->nullable();
 
             $table->timestamps();
+
+            $table->foreign('earthquakeEventId')->references('id')->on('earthquake_events');
+            $table->foreign('tsunamiEventId')->references('id')->on('tsunami_events');
+            $table->foreign('volcanoLocationId')->references('id')->on('volcanoes');
         });
     }
 
