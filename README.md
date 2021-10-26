@@ -19,7 +19,7 @@ Tests are written within `./app/tests/` directory.
 
 - `docker-compose exec php ./vendor/bin/phpunit`
 
-## SQLite Schéma
+## SQLite Schema
 
 ![sqlite_schema](https://user-images.githubusercontent.com/409734/138834720-f658adbd-6ef5-4fff-bb57-57d367ab7c80.png)
 
