@@ -19,8 +19,8 @@ class BaseResource extends JsonResource
                 'api_version' => 'v1',
                 'api_base' => route('api.base_api'),
                 'api_documentation' => [
-                    'swagger' => 'http://b2nh.tintamarre.be/api-docs.html',
-                    'redoc' => 'http://b2nh.tintamarre.be/api-redoc.html',
+                    'swagger' => route('api.base') . '/api-docs.html',
+                    'redoc' => route('api.base') . '/api-redoc.html',
                 ],
                 'source_code' => env('SOURCE_CODE'),
                 'author' => env('APP_NAME'),

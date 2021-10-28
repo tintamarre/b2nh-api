@@ -13,9 +13,10 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return redirect('api/v1');
-});
+$router->get('/', [
+    'as' => 'api.base',
+    'uses' => 'Api\ApiController@index',
+]);
 
 
 //  Routing
