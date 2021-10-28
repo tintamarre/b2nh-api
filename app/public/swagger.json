@@ -160,6 +160,33 @@
                 }
             }
         },
+        "/volcanoes/{volcano_id}/getImages": {
+            "get": {
+                "tags": [
+                    "Volcano"
+                ],
+                "summary": "Get Images URL of the volcano",
+                "description": "Get Volcano Images",
+                "operationId": "getVolcanoInfo",
+                "parameters": [
+                    {
+                        "name": "volcano_id",
+                        "in": "path",
+                        "description": "ID of the volcano",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "10102"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
         "/volcanoes_map/": {
             "get": {
                 "tags": [

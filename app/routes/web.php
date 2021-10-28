@@ -30,6 +30,12 @@ $router->group(['prefix'=>'api/v1'], function () use ($router) {
         'uses' => 'Api\VolcanoController@show',
     ]);
 
+    $router->get('/volcanoes/{volcano_id}/images', [
+        'as' => 'api.volcanoes.getImages',
+        'uses' => 'Api\VolcanoController@getImages',
+    ]);
+
+
     $router->get('/volcanoes/', [
         'as' => 'api.volcanoes.index',
         'uses' => 'Api\VolcanoController@index',

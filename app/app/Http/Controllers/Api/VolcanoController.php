@@ -72,6 +72,37 @@ class VolcanoController extends Controller
 
     /**
     * @OA\Get(
+    * path="/volcanoes/{volcano_id}/getImages",
+    * summary="Get Images URL of the volcano",
+    * description="Get Volcano Images",
+    * operationId="getVolcanoInfo",
+    * @OA\Parameter(
+    *          name="volcano_id",
+    *          description="ID of the volcano",
+    *          required=true,
+    *          in="path",
+    *          example="10102",
+    *          @OA\Schema(
+    *              type="string"
+    *          )
+    *      ),
+    * tags={"Volcano"},
+    * @OA\Response(
+    *    response=200,
+    *    description="Success"
+    * )
+    * )
+    */
+
+    public function getImages($volcano_id)
+    {
+        $volcano = Volcano::find($volcano_id);
+        return $volcano->ExternalImageUrl;
+    }
+
+
+    /**
+    * @OA\Get(
     * path="/volcanoes_map/",
     * summary="Get Volcanoes geographic informations",
     * description="Get Volcanoes lat/long",

@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Cache;
+use App\Models\BaseModel;
 
-class Volcano extends Model
+class Volcano extends BaseModel
 {
     // HAS MANY
 
@@ -38,29 +39,33 @@ class Volcano extends Model
         return "https://en.wikipedia.org/wiki/" . str_replace(' ', '_', $this->name);
     }
 
-    // public function getExternalImageUrlAttribute()
-    // {
-    //     $key = class_basename($this) . '_' . $this->id;
-        
-    //     return Cache::rememberForever($key, function () {
-    //         $url = "https://pixabay.com/api/?key=" . env('PIXABAY_API') . "&q=" . urlencode($this->name)  . "&image_type=photo";
-    //         $content = @file_get_contents($url);
-    //         if ($content === false) {
-    //             Cache::forget($key);
-    //             return null;
-    //         } else {
-    //             $result = json_decode($content);
+    public function getExternalImageUrlAttribute()
+    {
+        $key = class_basename($this) . '_' . $this->id;
 
-    //             if (!empty($result->hits)) {
-    //                 return $result->hits[0]->webformatURL;
-    //             } else {
-    //                 return 'not_found';
-    //             }
-    //         }
+        return Cache::remember($key, 3600, function () {
+            $url = "https://pixabay.com/api/?key=" . env('PIXABAY_API') . "&q=" . urlencode($this->name)  . "&image_type=photo";
+            $content = @file_get_contents($url);
+            if ($content === false) {
+                Cache::forget($key);
+                return 'error';
+            } else {
+                $result = json_decode($content);
 
-            
-            
-    //         return null;
-    //     });
-    // }
+                if (!empty($result->hits)) {
+                    return $result->hits[0]->webformatURL;
+                } else {
+                    $default_images = [
+                        "https://cdn.i-scmp.com/sites/default/files/d8/images/methode/2019/12/12/2fa2638e-1ca7-11ea-8971-922fdc94075f_image_hires_174609.JPG",
+                        "https://volcanodiscovery.de/uploads/tx_tplink/sakurajima_j02376m.jpg",
+                        "https://volcanodiscovery.de/fileadmin/photos/user/FrancescoTomarchio/tom2.jpg"
+                    ];
+                    
+                    shuffle($default_images);
+         
+                    return $default_images[0];
+                }
+            }
+        });
+    }
 }

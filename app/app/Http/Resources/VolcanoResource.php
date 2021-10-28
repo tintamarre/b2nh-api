@@ -8,6 +8,8 @@ class VolcanoResource extends BaseResource
     {
         return [
             'id' => $this->id,
+            'class_basename' => $this->class_basename,
+
             'name' => $this->name,
             'country' => $this->country,
             'location' => $this->location,
@@ -23,8 +25,10 @@ class VolcanoResource extends BaseResource
 
             'external' => [
                 'external_map_url' => $this->external_map_url,
-                'external_wikipedia_url' => $this->external_wikipedia_url
-                // 'external_image' => $this->external_image_url
+                'external_wikipedia_url' => $this->external_wikipedia_url,
+                'external_image' => route('api.volcanoes.getImages', ['volcano_id' => $this->id])
+
+
             ],
             'links' => [
                 'self' => route('api.volcanoes.show', ['volcano_id' => $this->id]),

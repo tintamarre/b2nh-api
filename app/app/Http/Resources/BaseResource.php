@@ -23,8 +23,8 @@ class BaseResource extends JsonResource
                     'redoc' => 'http://b2nh.tintamarre.be/api-redoc.html',
                 ],
                 'source_code' => env('SOURCE_CODE'),
-                'author' => '❤️ ' . env('APP_NAME'),
-                'disclaimer' => '⚠ What you are seeing is raw technical data formatted in a non human readable way. It is not meant to be user-friendly. To access a more user-friendy service, please visit ...',
+                'author' => env('APP_NAME'),
+                'disclaimer' => '⚠️ What you are seeing is raw technical data formatted in a non human readable way. It is not meant to be user-friendly. To access a more user-friendy service, please visit http://b2nh-front.tintamarre.be/',
             ],
         ];
     }

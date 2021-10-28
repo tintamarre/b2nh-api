@@ -14,22 +14,29 @@ class HomePageResource extends BaseResource
             'navigation_menu' => [
                 [
                     'title' => 'self',
-                    'url' => URL::current()
+                    'url' => URL::current(),
+                    'emoji' => '🌏🌊🌋'
                 ],
                 [
                     'title' => 'volcanoes',
+                    'emoji' => '🌋',
                     'url' => route('api.volcanoes.index'),
                 ],
                 [
                     'title' => 'volcano_events',
+                    'emoji' => '🌋',
                     'url' => route('api.volcano_events.index'),
                 ],
                 [
                     'title' => 'tsunami_events',
+                    'emoji' => '🌊',
+
                     'url' => route('api.tsunami_events.index'),
                 ],
                 [
                     'title' => 'earthquake_events',
+                    'emoji' => '🌏',
+
                     'url' => route('api.earthquake_events.index'),
                 ]
             ],
