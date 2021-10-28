@@ -160,13 +160,13 @@
                 }
             }
         },
-        "/volcanoes/{volcano_id}/getImages": {
+        "/volcanoes/{volcano_id}/image": {
             "get": {
                 "tags": [
                     "Volcano"
                 ],
-                "summary": "Get Images URL of the volcano",
-                "description": "Get Volcano Images",
+                "summary": "Get an image (url) the volcano or a default one",
+                "description": "Get Volcano Image",
                 "operationId": "getVolcanoInfo",
                 "parameters": [
                     {

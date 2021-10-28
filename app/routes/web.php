@@ -30,9 +30,9 @@ $router->group(['prefix'=>'api/v1'], function () use ($router) {
         'uses' => 'Api\VolcanoController@show',
     ]);
 
-    $router->get('/volcanoes/{volcano_id}/images', [
-        'as' => 'api.volcanoes.getImages',
-        'uses' => 'Api\VolcanoController@getImages',
+    $router->get('/volcanoes/{volcano_id}/image', [
+        'as' => 'api.volcanoes.getImage',
+        'uses' => 'Api\VolcanoController@getImage',
     ]);
 
 
@@ -44,6 +44,11 @@ $router->group(['prefix'=>'api/v1'], function () use ($router) {
     $router->get('/volcanoes_map/', [
         'as' => 'api.volcanoes.map',
         'uses' => 'Api\VolcanoController@map',
+    ]);
+
+    $router->get('/volcanoes_elevation/', [
+        'as' => 'api.volcanoes.elevation',
+        'uses' => 'Api\VolcanoController@elevation',
     ]);
 
 

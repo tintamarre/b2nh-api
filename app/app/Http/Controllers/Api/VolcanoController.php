@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Volcano;
 use App\Http\Resources\VolcanoResource;
+use App\Http\Resources\VolcanoesResource;
 use App\Http\Resources\VolcanoMapResource;
+use App\Http\Resources\VolcanoElevationResource;
 
 class VolcanoController extends Controller
 {
@@ -31,7 +33,7 @@ class VolcanoController extends Controller
             'tsunami_events'
         ])->paginate(10);
         
-        return VolcanoResource::collection($volcanoes);
+        return VolcanoesResource::collection($volcanoes);
     }
 
     /**
@@ -72,9 +74,9 @@ class VolcanoController extends Controller
 
     /**
     * @OA\Get(
-    * path="/volcanoes/{volcano_id}/getImages",
-    * summary="Get Images URL of the volcano",
-    * description="Get Volcano Images",
+    * path="/volcanoes/{volcano_id}/image",
+    * summary="Get an image (url) the volcano or a default one",
+    * description="Get Volcano Image",
     * operationId="getVolcanoInfo",
     * @OA\Parameter(
     *          name="volcano_id",
@@ -94,7 +96,7 @@ class VolcanoController extends Controller
     * )
     */
 
-    public function getImages($volcano_id)
+    public function getImage($volcano_id)
     {
         $volcano = Volcano::find($volcano_id);
         return $volcano->ExternalImageUrl;
@@ -120,5 +122,11 @@ class VolcanoController extends Controller
         $volcanoes = Volcano::all();
         
         return VolcanoMapResource::collection($volcanoes);
+    }
+
+    public function elevation()
+    {
+        $volcanoes = Volcano::whereNotNull('elevation')->orderBy('elevation')->get();
+        return VolcanoElevationResource::collection($volcanoes);
     }
 }

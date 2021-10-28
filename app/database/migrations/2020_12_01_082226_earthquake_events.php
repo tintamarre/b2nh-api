@@ -18,7 +18,7 @@ class EarthquakeEvents extends Migration
             $table->string('locationName')->nullable();
             $table->string('country')->nullable();
             
-            $table->string('year')->nullable();
+            $table->integer('year')->nullable();
             $table->integer('month')->nullable();
             $table->integer('day')->nullable();
             $table->integer('hour')->nullable();

@@ -16,7 +16,7 @@ class VolcanoEvents extends Migration
         Schema::create('volcano_events', function (Blueprint $table) {
             $table->id();
             
-            $table->string('year')->nullable();
+            $table->integer('year')->nullable();
             $table->integer('month')->nullable();
             $table->integer('day')->nullable();
 
