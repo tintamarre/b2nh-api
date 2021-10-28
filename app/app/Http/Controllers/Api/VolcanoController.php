@@ -108,7 +108,7 @@ class VolcanoController extends Controller
     * path="/volcanoes_map/",
     * summary="Get Volcanoes geographic informations",
     * description="Get Volcanoes lat/long",
-    * operationId="getVolcanoesMapPositions",
+    * operationId="getVolcanoInfo",
     * tags={"Volcano"},
     * @OA\Response(
     *    response=200,
@@ -124,6 +124,19 @@ class VolcanoController extends Controller
         return VolcanoMapResource::collection($volcanoes);
     }
 
+    /**
+    * @OA\Get(
+    * path="/volcanoes_elevation/",
+    * summary="Get Volcanoes elevations",
+    * description="Get Volcanoes elevations",
+    * operationId="getVolcanoInfo",
+    * tags={"Volcano"},
+    * @OA\Response(
+    *    response=200,
+    *    description="Success"
+    * )
+    * )
+    */
     public function elevation()
     {
         $volcanoes = Volcano::whereNotNull('elevation')->orderBy('elevation')->get();

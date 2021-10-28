@@ -194,7 +194,22 @@
                 ],
                 "summary": "Get Volcanoes geographic informations",
                 "description": "Get Volcanoes lat/long",
-                "operationId": "getVolcanoesMapPositions",
+                "operationId": "getVolcanoInfo",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/volcanoes_elevation/": {
+            "get": {
+                "tags": [
+                    "Volcano"
+                ],
+                "summary": "Get Volcanoes elevations",
+                "description": "Get Volcanoes elevations",
+                "operationId": "getVolcanoInfo",
                 "responses": {
                     "200": {
                         "description": "Success"
