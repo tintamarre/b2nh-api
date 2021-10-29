@@ -30,14 +30,26 @@ class HomePageResource extends BaseResource
                 [
                     'title' => 'tsunami_events',
                     'emoji' => '🌊',
-
                     'url' => route('api.tsunami_events.index'),
                 ],
                 [
                     'title' => 'earthquake_events',
                     'emoji' => '🌏',
-
                     'url' => route('api.earthquake_events.index'),
+                ],
+                [
+                    'title' => 'custom_methods',
+                    'emoji' => '🛶',
+                    'methods' => [
+                        'volcanoes_map' => [
+                            'title' => 'volcano_map',
+                            'url' => route('api.volcanoes.map'),
+                        ],
+                        'volcanoes_elevation' => [
+                            'title' => 'volcano_map',
+                            'url' => route('api.volcanoes.elevation'),
+                        ],
+                    ]
                 ]
             ],
             ];
