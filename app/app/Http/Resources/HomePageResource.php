@@ -49,6 +49,18 @@ class HomePageResource extends BaseResource
                             'title' => 'volcano_map',
                             'url' => route('api.volcanoes.elevation'),
                         ],
+                        'events_by_type' => [
+                            'title' => 'events_by_type',
+                            'url' => null,
+                        ],
+                        'events_by_damage' => [
+                            'title' => 'events_by_damage',
+                            'url' => null,
+                        ],
+                        'events_by_deaths' => [
+                            'title' => 'events_by_deaths',
+                            'url' => null,
+                        ],
                     ]
                 ]
             ],
