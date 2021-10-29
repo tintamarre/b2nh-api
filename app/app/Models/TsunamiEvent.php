@@ -33,7 +33,7 @@ class TsunamiEvent extends BaseEventModel
         return $this->hasMany('App\Models\EarthquakeEvent', 'earthquakeEventId');
     }
 
-
+    // Helper Attribute
     public function getDamageAmountOrderLabelAttribute()
     {
         $key = 'damage' .'_'. $this->damageAmountOrder;

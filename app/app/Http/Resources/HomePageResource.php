@@ -14,28 +14,28 @@ class HomePageResource extends BaseResource
             'navigation_menu' => [
                 [
                     'title' => 'self',
-                    'url' => URL::current(),
-                    'emoji' => '🌏🌊🌋'
+                    'emoji' => '🌏🌊🌋',
+                    'href' => URL::current(),
                 ],
                 [
                     'title' => 'volcanoes',
                     'emoji' => '🌋',
-                    'url' => route('api.volcanoes.index'),
+                    'href' => route('api.volcanoes.index'),
                 ],
                 [
                     'title' => 'volcano_events',
                     'emoji' => '🌋',
-                    'url' => route('api.volcano_events.index'),
+                    'href' => route('api.volcano_events.index'),
                 ],
                 [
                     'title' => 'tsunami_events',
                     'emoji' => '🌊',
-                    'url' => route('api.tsunami_events.index'),
+                    'href' => route('api.tsunami_events.index'),
                 ],
                 [
                     'title' => 'earthquake_events',
                     'emoji' => '🌏',
-                    'url' => route('api.earthquake_events.index'),
+                    'href' => route('api.earthquake_events.index'),
                 ],
                 [
                     'title' => 'custom_methods',
@@ -43,23 +43,23 @@ class HomePageResource extends BaseResource
                     'methods' => [
                         'volcanoes_map' => [
                             'title' => 'volcano_map',
-                            'url' => route('api.volcanoes.map'),
+                            'href' => route('api.volcanoes.map'),
                         ],
                         'volcanoes_elevation' => [
                             'title' => 'volcano_map',
-                            'url' => route('api.volcanoes.elevation'),
+                            'href' => route('api.volcanoes.elevation'),
                         ],
                         'events_by_type' => [
                             'title' => 'events_by_type',
-                            'url' => null,
+                            'href' => null,
                         ],
                         'events_by_damage' => [
                             'title' => 'events_by_damage',
-                            'url' => null,
+                            'href' => null,
                         ],
                         'events_by_deaths' => [
                             'title' => 'events_by_deaths',
-                            'url' => null,
+                            'href' => null,
                         ],
                     ]
                 ]

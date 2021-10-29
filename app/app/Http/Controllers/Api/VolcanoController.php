@@ -7,7 +7,6 @@ use App\Models\Volcano;
 use App\Http\Resources\VolcanoResource;
 use App\Http\Resources\VolcanoesResource;
 use App\Http\Resources\VolcanoMapResource;
-use App\Http\Resources\VolcanoElevationResource;
 
 class VolcanoController extends Controller
 {
@@ -139,7 +138,15 @@ class VolcanoController extends Controller
     */
     public function elevation()
     {
-        $volcanoes = Volcano::whereNotNull('elevation')->orderBy('elevation')->get();
-        return VolcanoElevationResource::collection($volcanoes);
+        $volcanoes_elevation = Volcano::whereNotNull('elevation')->orderBy('elevation')->pluck('elevation');
+
+        // Force output value to be (int)
+        foreach ($volcanoes_elevation as $key => $elevation) {
+            $volcanoes_elevationArr[$key] = (int)$elevation;
+        }
+
+        return response()->json([
+            'data' => $volcanoes_elevationArr
+        ]);
     }
 }

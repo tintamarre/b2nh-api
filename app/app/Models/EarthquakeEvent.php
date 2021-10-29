@@ -29,6 +29,7 @@ class EarthquakeEvent extends BaseEventModel
     }
 
 
+    // Helper Attribute
     public function getDamageAmountOrderLabelAttribute()
     {
         $key = 'damage' .'_'. $this->damageAmountOrder;
