@@ -70,38 +70,6 @@ class VolcanoController extends Controller
         return new VolcanoResource($volcano);
     }
 
-
-    /**
-    * @OA\Get(
-    * path="/volcanoes/{volcano_id}/image",
-    * summary="Get an image (url) the volcano or a default one",
-    * description="Get Volcano Image",
-    * operationId="getVolcanoInfo",
-    * @OA\Parameter(
-    *          name="volcano_id",
-    *          description="ID of the volcano",
-    *          required=true,
-    *          in="path",
-    *          example="10102",
-    *          @OA\Schema(
-    *              type="string"
-    *          )
-    *      ),
-    * tags={"Volcano"},
-    * @OA\Response(
-    *    response=200,
-    *    description="Success"
-    * )
-    * )
-    */
-
-    public function getImage($volcano_id)
-    {
-        $volcano = Volcano::find($volcano_id);
-        return $volcano->ExternalImageUrl;
-    }
-
-
     /**
     * @OA\Get(
     * path="/volcanoes_map/",
@@ -120,7 +88,13 @@ class VolcanoController extends Controller
     {
         $volcanoes = Volcano::all();
         
-        return VolcanoMapResource::collection($volcanoes);
+        $features = $volcanoes->pluck('geojson')->toArray();
+
+        return response()->json([
+                "type" => "FeatureCollection",
+                // "features" => json_decode($features)
+                "features" => VolcanoMapResource::collection($volcanoes)
+        ]);
     }
 
     /**

@@ -31,12 +31,17 @@ $router->group(['prefix'=>'api/v1'], function () use ($router) {
         'uses' => 'Api\VolcanoController@show',
     ]);
 
-    $router->get('/volcanoes/{volcano_id}/image', [
-        'as' => 'api.volcanoes.getImage',
-        'uses' => 'Api\VolcanoController@getImage',
+    // event controller
+    $router->get('/events/{type}/{event_id}', [
+        'as' => 'api.events.show',
+        'uses' => 'Api\EventController@show',
     ]);
 
-
+    $router->get('/events/random', [
+        'as' => 'api.events.random',
+        'uses' => 'Api\EventController@random',
+    ]);
+    
     $router->get('/volcanoes/', [
         'as' => 'api.volcanoes.index',
         'uses' => 'Api\VolcanoController@index',
@@ -54,36 +59,42 @@ $router->group(['prefix'=>'api/v1'], function () use ($router) {
 
 
 
-    $router->get('/volcano_events/{volcano_event_id}', [
-        'as' => 'api.volcano_events.show',
-        'uses' => 'Api\VolcanoEventController@show',
-    ]);
-
+    // Index pagination
     $router->get('/volcano_events/', [
         'as' => 'api.volcano_events.index',
         'uses' => 'Api\VolcanoEventController@index',
     ]);
-
-
     $router->get('/tsunami_events/', [
         'as' => 'api.tsunami_events.index',
         'uses' => 'Api\TsunamiEventController@index',
     ]);
-
-
-    $router->get('/tsunami_events/{tsunami_event_id}', [
-        'as' => 'api.tsunami_events.show',
-        'uses' => 'Api\TsunamiEventController@show',
-    ]);
-
 
     $router->get('/earthquake_events/', [
         'as' => 'api.earthquake_events.index',
         'uses' => 'Api\EarthquakeEventController@index',
     ]);
 
-    $router->get('/earthquake_events/{earthquake_event_id}', [
-        'as' => 'api.earthquake_events.show',
-        'uses' => 'Api\EarthquakeEventController@show',
+    // IMAGE URL FROM PIXABAY
+    $router->get('/images/{category}/{item}', [
+        'as' => 'api.images.getUrl',
+        'uses' => 'Api\ImageController@getUrl',
     ]);
+
+    // CUSTOM
+    $router->get('/events_count_per_year/', [
+        'as' => 'api.events.count_per_year',
+        'uses' => 'Api\EventController@count_per_year',
+    ]);
+
+
+    // CUSTOM
+    $router->get('/event_siblings/{type}/{event_id}/nearest/{count}', [
+            'as' => 'api.event_siblings.nearest',
+            'uses' => 'Api\EventSiblingsController@nearest',
+        ]);
+
+    $router->get('/event_siblings/{type}/{event_id}/closest/{count}', [
+            'as' => 'api.event_siblings.closest',
+            'uses' => 'Api\EventSiblingsController@closest',
+        ]);
 });

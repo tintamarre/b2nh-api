@@ -7,15 +7,21 @@ class VolcanoResource extends BaseResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
+            'id' => (int)$this->id,
             'class_basename' => $this->class_basename,
 
             'name' => $this->name,
+
             'country' => $this->country,
             'location' => $this->location,
-            'latitude' => $this->latitude,
-            'longitude' => $this->longitude,
-            'elevation' => $this->elevation,
+            
+            'longitude' => (float)$this->longitude,
+            'latitude' => (float)$this->latitude,
+
+            'geoJson' => json_decode($this->geoJson),
+
+
+            'elevation' => (int)$this->elevation,
             'morphology' => $this->morphology,
 
             'events_count' => (int)$this->events_count,
@@ -26,8 +32,7 @@ class VolcanoResource extends BaseResource
             'external' => [
                 'external_map_url' => $this->external_map_url,
                 'external_wikipedia_url' => $this->external_wikipedia_url,
-                'external_image' => route('api.volcanoes.getImage', ['volcano_id' => $this->id])
-
+                'external_image' => route('api.images.getUrl', ['category' => 'volcano', 'item' => urlencode($this->name)]),
 
             ],
             'links' => [

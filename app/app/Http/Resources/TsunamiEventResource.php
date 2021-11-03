@@ -7,67 +7,74 @@ class TsunamiEventResource extends BaseResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
+            'id' => (int)$this->id,
             'class_basename' => $this->class_basename,
 
-            'year' => $this->year,
-            'month' => $this-> month,
-            'day' => $this->day,
-            'hour' => $this->hour,
-            'minute' => $this->minute,
-            'second' => $this->second,
+            'type' => "tsunami",
+            'emoji' => "🌊",
 
-            'dateTime' => $this->dateTime,
+            'year' => (int)$this->year,
+            'month' => (int)$this-> month,
+            'day' => (int)$this->day,
+            'hour' => (int)$this->hour,
+            'minute' => (int)$this->minute,
+            'second' => (int)$this->second,
+
+            'dateTime' => $this->dateTime->toCookieString(),
+            'dateTimeDiffForHumans' => $this->dateTimeDiffForHumans,
 
             'locationName' => $this->locationName,
+
             'country' => $this->country,
             'area' => $this->area,
 
-            'latitude' => $this->latitude,
-            'longitude' => $this->longitude,
-            
-            'maxWaterHeight' => $this->maxWaterHeight,
+            'longitude' => (float)$this->longitude,
+            'latitude' => (float)$this->latitude,
+
+            'geoJson' => json_decode($this->geoJson),
+
+            'maxWaterHeight' => (int)$this->maxWaterHeight,
             'tsMtAbe' => $this->tsMtAbe,
 
-            'regionCode' => $this->regionCode,
+            'regionCode' => (int)$this->regionCode,
             'regionCodeLabel' => $this->regionCodeLabel,
 
-            'causeCode' => $this->causeCode,
+            'causeCode' => (int)$this->causeCode,
             'causeCodeLabel' => $this->causeCodeLabel,
 
-            'eventValidity' => $this->eventValidity,
+            'eventValidity' => (int)$this->eventValidity,
             'eventValidityLabel' => $this->eventValidityLabel,
 
             'damageAmountOrder' => (int)$this->damageAmountOrder,
             'damageAmountOrderLabel' => $this->damageAmountOrderLabel,
-            'damageMillionsDollars' => $this->damageMillionsDollars,
+            'damageMillionsDollars' => (int)$this->damageMillionsDollars,
    
 
-            'housesDestroyed' => $this->housesDestroyed,
+            'housesDestroyed' => (int)$this->housesDestroyed,
             'housesDestroyedAmountOrder' => (int)$this->housesDestroyedAmountOrder,
             'housesDestroyedAmountOrderLabel' => $this->housesDestroyedAmountOrderLabel,
 
-            'housesDamaged' => $this->housesDamaged,
+            'housesDamaged' => (int)$this->housesDamaged,
             'housesDamagedAmountOrder' => (int)$this->housesDamagedAmountOrder,
             'housesDamagedAmountOrderLabel' => $this->housesDamagedAmountOrderLabel,
 
-            'injuries' => $this->injuries,
+            'injuries' => (int)$this->injuries,
             'injuriesAmountOrder' => (int)$this->injuriesAmountOrder,
             'injuriesAmountOrderLabel' => $this->injuriesAmountOrderLabel,
 
-            'missing' => $this->missing,
+            'missing' => (int)$this->missing,
             'missingAmountOrder' => (int)$this->missingAmountOrder,
             'missingAmountOrderLabel' => $this->missingAmountOrderLabel,
 
-            'deaths' => $this->deaths,
+            'deaths' => (int)$this->deaths,
             'deathsAmountOrder' => (int)$this->deathsAmountOrder,
             'deathsAmountOrderLabel' => $this->deathsAmountOrderLabel,
 
             'comments' => $this->comments,
 
-            'earthquakeEventId' => $this->earthquakeEventId,
-            'volcanoLocationId' => $this->volcanoLocationId,
-            'volcanoEventId' => $this->volcanoEventId,
+            'earthquakeEventId' => (int)$this->earthquakeEventId,
+            'volcanoLocationId' => (int)$this->volcanoLocationId,
+            'volcanoEventId' => (int)$this->volcanoEventId,
 
 
             'earthquake_event' => new EarthquakeEventResource($this->whenLoaded('earthquake_event')),
@@ -77,8 +84,16 @@ class TsunamiEventResource extends BaseResource
             'volcano_events' => VolcanoEventResource::collection($this->whenLoaded('volcano_events')),
             'earthquake_events' => EarthquakeEventResource::collection($this->whenLoaded('earthquake_events')),
  
+            'external' => [
+                'external_map_url' => $this->external_map_url,
+                'external_image' => route('api.images.getUrl', ['category' => 'tsunami', 'item' => urlencode($this->locationName)]),
+            ],
+
             'links' => [
-                'self' => route('api.tsunami_events.show', ['tsunami_event_id' => $this->id])
+                'self' => route('api.events.show', [
+                    'type' => 'tsunami',
+                    'event_id' => $this->id
+                ]),
                 ]
 
         ];

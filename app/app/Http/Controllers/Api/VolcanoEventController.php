@@ -27,33 +27,4 @@ class VolcanoEventController extends Controller
     {
         return VolcanoEventResource::collection(VolcanoEvent::paginate(10));
     }
-
-    /**
-    * @OA\Get(
-    * path="/volcano_events/{volcano_event_id}",
-    * summary="Get Volcano event information",
-    * description="Get Volcano Event",
-    * operationId="getVolcanoEventInfo",
-    * @OA\Parameter(
-    *          name="volcano_event_id",
-    *          description="ID of the event volcano",
-    *          required=true,
-    *          in="path",
-    *          example="6804",
-    *          @OA\Schema(
-    *              type="string"
-    *          )
-    *      ),
-    * tags={"Eruption"},
-    * @OA\Response(
-    *    response=200,
-    *    description="Success"
-    * )
-    * )
-    */
-
-    public function show($volcano_event_id)
-    {
-        return new VolcanoEventResource(VolcanoEvent::with(['volcano', 'tsunami_event','earthquake_event'])->find($volcano_event_id));
-    }
 }

@@ -29,6 +29,17 @@ class VolcanoEvent extends BaseEventModel
     }
 
     // Helper Attribute
+
+    public function getLatitudeAttribute()
+    {
+        return $this->volcano->latitude;
+    }
+
+    public function getLongitudeAttribute()
+    {
+        return $this->volcano->longitude;
+    }
+
     public function getDamageAmountOrderLabelAttribute()
     {
         $key = 'damage' .'_'. $this->damageAmountOrder;
