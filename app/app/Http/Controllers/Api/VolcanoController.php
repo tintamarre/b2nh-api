@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Volcano;
 use App\Http\Resources\VolcanoResource;
 use App\Http\Resources\VolcanoesResource;
-use App\Http\Resources\VolcanoMapResource;
+use App\Http\Resources\GeoJsonResource;
 
 class VolcanoController extends Controller
 {
@@ -70,33 +70,7 @@ class VolcanoController extends Controller
         return new VolcanoResource($volcano);
     }
 
-    /**
-    * @OA\Get(
-    * path="/volcanoes_map/",
-    * summary="Get Volcanoes geographic informations",
-    * description="Get Volcanoes lat/long",
-    * operationId="getVolcanoInfo",
-    * tags={"Volcano"},
-    * @OA\Response(
-    *    response=200,
-    *    description="Success"
-    * )
-    * )
-    */
-
-    public function map()
-    {
-        $volcanoes = Volcano::all();
-        
-        $features = $volcanoes->pluck('geojson')->toArray();
-
-        return response()->json([
-                "type" => "FeatureCollection",
-                // "features" => json_decode($features)
-                "features" => VolcanoMapResource::collection($volcanoes)
-        ]);
-    }
-
+    
     /**
     * @OA\Get(
     * path="/volcanoes_elevation/",

@@ -19,8 +19,8 @@ class VolcanoesResource extends BaseResource
             'longitude' => (float)$this->longitude,
             'latitude' => (float)$this->latitude,
 
-            'longitude' => $this->longitude,
             'elevation' => $this->elevation,
+            'morphology' => $this->morphology,
 
             'geoJson' => json_decode($this->geoJson),
 

@@ -10,8 +10,8 @@ class TsunamiEventResource extends BaseResource
             'id' => (int)$this->id,
             'class_basename' => $this->class_basename,
 
-            'type' => "tsunami",
-            'emoji' => "🌊",
+            'type' => (string)$this->type,
+             'emoji' => "🌊",
 
             'year' => (int)$this->year,
             'month' => (int)$this-> month,

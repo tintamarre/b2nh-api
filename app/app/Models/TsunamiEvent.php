@@ -34,6 +34,21 @@ class TsunamiEvent extends BaseEventModel
     }
 
     // Helper Attribute
+    public function getTypeAttribute()
+    {
+        return 'tsunami';
+    }
+
+    public function getMeasureTypeAttribute()
+    {
+        return 'maxWaterHeight';
+    }
+
+    public function getMeasureValueAttribute()
+    {
+        return $this->maxWaterHeight;
+    }
+
     public function getDamageAmountOrderLabelAttribute()
     {
         $key = 'damage' .'_'. $this->damageAmountOrder;

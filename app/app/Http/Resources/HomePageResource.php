@@ -61,6 +61,15 @@ class HomePageResource extends BaseResource
                             'title' => 'events_by_deaths',
                             'href' => null,
                         ],
+                        'count_per_years' => [
+                            'title' => 'count_per_years',
+                            'href' => route('api.events.count_per_years'),
+                        ],
+
+                        'sunburst' => [
+                            'title' => 'sunburst',
+                            'href' => route('api.events.sunburst'),
+                        ],
                     ]
                 ]
             ],

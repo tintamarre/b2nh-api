@@ -20,7 +20,7 @@ class Volcanoes extends Migration
             $table->string('location')->nullable();
             $table->string('morphology')->nullable();
 
-            $table->integer('elevation')->nullable();
+            $table->float('elevation')->nullable();
             
             $table->string('latitude')->nullable();
             $table->string('longitude')->nullable();

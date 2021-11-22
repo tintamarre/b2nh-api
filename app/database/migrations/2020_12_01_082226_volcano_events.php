@@ -36,7 +36,7 @@ class VolcanoEvents extends Migration
             $table->string('injuriesAmountOrder')->nullable();
             $table->string('injuriesTotal')->nullable();
  
-            $table->string('vei')->nullable();
+            $table->integer('vei')->nullable();
 
             $table->string('missing')->nullable();
             $table->string('missingAmountOrder')->nullable();

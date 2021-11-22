@@ -30,6 +30,22 @@ class EarthquakeEvent extends BaseEventModel
 
 
     // Helper Attribute
+    public function getTypeAttribute()
+    {
+        return 'earthquake';
+    }
+
+    public function getMeasureTypeAttribute()
+    {
+        return 'eqMagnitude';
+    }
+
+    public function getMeasureValueAttribute()
+    {
+        return $this->eqMagnitude;
+    }
+
+
     public function getDamageAmountOrderLabelAttribute()
     {
         $key = 'damage' .'_'. $this->damageAmountOrder;

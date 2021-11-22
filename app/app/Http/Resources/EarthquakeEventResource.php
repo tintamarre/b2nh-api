@@ -9,7 +9,7 @@ class EarthquakeEventResource extends BaseResource
         return [
             'id' => (int)$this->id,
 
-            'type' => "earthquake",
+            'type' => (string)$this->type,
             'emoji' => "🌏",
 
             'class_basename' => $this->class_basename,
@@ -22,21 +22,21 @@ class EarthquakeEventResource extends BaseResource
             'minute' => (int)$this->minute,
             'second' => (int)$this->second,
 
-            'dateTime' => $this->dateTime->toCookieString(),
-            'dateTimeDiffForHumans' => $this->dateTimeDiffForHumans,
-
-            'locationName' => $this->locationName,
-            'country' => $this->country,
-            
             'longitude' => (float)$this->longitude,
             'latitude' => (float)$this->latitude,
 
+            'locationName' => $this->locationName,
+            'country' => $this->country,
+
+            'dateTime' => $this->dateTime->toCookieString(),
+            'dateTimeDiffForHumans' => $this->dateTimeDiffForHumans,
+
             'geoJson' => json_decode($this->geoJson),
+
+            'area' => $this->area,
 
             'regionCode' => (int)$this->regionCode,
             'regionCodeLabel' => $this->regionCodeLabel,
-
-            'area' => $this->area,
 
             'eqMagnitude' => (float)$this->eqMagnitude,
             'eqDepth' => (float)$this->eqDepth,
@@ -44,9 +44,6 @@ class EarthquakeEventResource extends BaseResource
 
             'intensity' => (int)$this->intensity,
             'intensityLabel' => $this->intensityLabel,
-
-            'tsunamiEventId' => (int)$this->tsunamiEventId,
-            'volcanoEventId' => (int)$this->volcanoEventId,
 
             'damageAmountOrder' => (int)$this->damageAmountOrder,
             'damageAmountOrderLabel' => $this->damageAmountOrderLabel,
@@ -78,6 +75,9 @@ class EarthquakeEventResource extends BaseResource
             'deathsAmountOrderLabel' => $this->deathsAmountOrderLabel,
 
             'comments' => $this->comments,
+
+            'tsunamiEventId' => (int)$this->tsunamiEventId,
+            'volcanoEventId' => (int)$this->volcanoEventId,
 
             'tsunami_event' => new TsunamiEventResource($this->whenLoaded('tsunami_event')),
             'volcano_event' => new VolcanoEventResource($this->whenLoaded('volcano_event')),

@@ -34,22 +34,22 @@ class TsunamiEvents extends Migration
             $table->integer('volcanoLocationId')->nullable();
             $table->integer('volcanoEventId')->nullable();
 
-            $table->string('damageAmountOrder')->nullable();
+            $table->integer('damageAmountOrder')->nullable();
             $table->integer('damageMillionsDollars')->nullable();
    
-            $table->string('deathsAmountOrder')->nullable();
+            $table->integer('deathsAmountOrder')->nullable();
 
             $table->string('housesDestroyed')->nullable();
-            $table->string('housesDestroyedAmountOrder')->nullable();
+            $table->integer('housesDestroyedAmountOrder')->nullable();
 
             $table->string('housesDamaged')->nullable();
-            $table->string('housesDamagedAmountOrder')->nullable();
+            $table->integer('housesDamagedAmountOrder')->nullable();
 
 
             $table->string('injuries')->nullable();
-            $table->string('injuriesAmountOrder')->nullable();
+            $table->integer('injuriesAmountOrder')->nullable();
 
-            $table->string('maxWaterHeight')->nullable();
+            $table->float('maxWaterHeight')->nullable();
        
             $table->string('tsMtAbe')->nullable();
             

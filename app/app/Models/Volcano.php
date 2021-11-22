@@ -51,15 +51,14 @@ class Volcano extends BaseModel
                         (float)$this->longitude,
                         (float)$this->latitude
                     ],
-                    'properties' => [
-                        'title' => $this->name ?: '',
-                        'type' => $this->class_basename,
-                        'description' => $this->class_basename,
-                        'marker-color' => '#ff0000',
-                        'marker-symbol' => 'circle',
-                        'marker-size' => 'medium'
-                    ]
                 ],
+                // 'LatLng' => 'LatLng(' . (float)$this->latitude . ',' . (float)$this->longitude . ')',
+                'properties' => [
+                    'title' => $this->name ?: '',
+                    'type' => $this->class_basename,
+                    'description' => $this->class_basename,
+                    'self_url' => route('api.volcanoes.show', ['volcano_id' => $this->id]),
+                ]
             ]);
         }
     }

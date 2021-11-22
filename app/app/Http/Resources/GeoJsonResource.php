@@ -2,7 +2,7 @@
 
 namespace App\Http\Resources;
 
-class VolcanoMapResource extends BaseResource
+class GeoJsonResource extends BaseResource
 {
     public function toArray($request)
     {

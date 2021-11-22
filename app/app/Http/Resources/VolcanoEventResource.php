@@ -12,7 +12,7 @@ class VolcanoEventResource extends BaseResource
             'id' => (int)$this->id,
             'class_basename' => $this->class_basename,
 
-            'type' => "irruption",
+            'type' => (string)$this->type,
             'emoji' => "🌋",
 
             'year' => (int)$this->year,
@@ -30,7 +30,7 @@ class VolcanoEventResource extends BaseResource
             'startDate' => $this->startDate,
             'endDate' => $this->endDate,
             
-            'duration' => Carbon::createFromDate($this->endDate)->diffForHumans($this->startDate, Carbon::DIFF_ABSOLUTE),
+            'duration' => $this->duration,
 
             // Volcano Explosivity Index
             'volcano_explosivity_index' => (int)$this->vei,

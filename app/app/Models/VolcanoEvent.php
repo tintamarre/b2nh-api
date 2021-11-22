@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class VolcanoEvent extends BaseEventModel
 {
@@ -29,6 +30,27 @@ class VolcanoEvent extends BaseEventModel
     }
 
     // Helper Attribute
+
+
+    public function getTypeAttribute()
+    {
+        return 'irruption';
+    }
+
+    public function getMeasureTypeAttribute()
+    {
+        return 'vei';
+    }
+
+    public function getMeasureValueAttribute()
+    {
+        return $this->vei;
+    }
+
+    public function getCustomTitleAttribute()
+    {
+        return $this->volcano->name;
+    }
 
     public function getLatitudeAttribute()
     {
@@ -72,6 +94,15 @@ class VolcanoEvent extends BaseEventModel
         $key = 'people' .'_'. $this->missingAmountOrder;
 
         return $this->getLabelFromHelper($key);
+    }
+
+    public function getDurationAttribute()
+    {
+        if ($this->endDate) {
+            return Carbon::createFromDate($this->endDate)->diffForHumans($this->startDate, Carbon::DIFF_ABSOLUTE);
+        } else {
+            return 'unknown';
+        }
     }
 
     public function getVeiDetailsAttribute()

@@ -49,8 +49,15 @@ $router->group(['prefix'=>'api/v1'], function () use ($router) {
 
     $router->get('/volcanoes_map/', [
         'as' => 'api.volcanoes.map',
-        'uses' => 'Api\VolcanoController@map',
+        'uses' => 'Api\MapController@map',
     ]);
+
+
+    $router->get('/filter_map/start/{start_year}/end/{end_year}', [
+        'as' => 'api.filter_map',
+        'uses' => 'Api\MapController@filter_map',
+    ]);
+
 
     $router->get('/volcanoes_elevation/', [
         'as' => 'api.volcanoes.elevation',
@@ -81,10 +88,18 @@ $router->group(['prefix'=>'api/v1'], function () use ($router) {
     ]);
 
     // CUSTOM
-    $router->get('/events_count_per_year/', [
-        'as' => 'api.events.count_per_year',
-        'uses' => 'Api\EventController@count_per_year',
+    $router->get('/events_count_per_years/', [
+        'as' => 'api.events.count_per_years',
+        'uses' => 'Api\EventController@count_per_years',
     ]);
+
+    // CUSTOM
+    $router->get('/events_sunburst/', [
+        'as' => 'api.events.sunburst',
+        'uses' => 'Api\EventController@sunburst',
+    ]);
+
+
 
 
     // CUSTOM
