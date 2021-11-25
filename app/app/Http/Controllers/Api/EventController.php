@@ -135,14 +135,14 @@ class EventController extends Controller
                  ->select(DB::raw("'VEI' || ' ' || vei as name, count(id) as value"))
                  ->groupBy('name')
                  ->orderBy('vei', 'asc')
-                 ->where('vei', '>=', 3)
+                 ->where('vei', '>=', 4)
                  ->get();
 
         $tsunami_events = DB::table('tsunami_events')
                  ->select(DB::raw("'tis' || ' ' || (round(maxWaterHeight / 100) + 5) as name, count(id) as value"))
                  ->groupBy('name')
                  ->orderBy('maxWaterHeight', 'asc')
-                 ->where('maxWaterHeight', '>=', 30)
+                 ->where('maxWaterHeight', '>=', 7)
                  ->get();
 
                  
@@ -150,7 +150,7 @@ class EventController extends Controller
                  ->select(DB::raw("'EqMagni' || ' ' || round(eqMagnitude) as name, count(id) as value"))
                  ->groupBy('name')
                  ->orderBy('eqMagnitude', 'asc')
-                 ->where('eqMagnitude', '>=', 8.2)
+                 ->where('eqMagnitude', '>=', 8)
                  ->get();
 
     
