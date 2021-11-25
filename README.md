@@ -2,8 +2,8 @@
 
 ## Documentation of the API (Swagger OpenAPI)
 
-- Default: <http://b2nh.tintamarre.be/api-docs.html>
-- Redoc: <http://b2nh.tintamarre.be/api-redoc.html>
+- Default: <https://b2nh-api.tintamarre.be/api-docs.html>
+- Redoc: <https://b2nh-api.tintamarre.be/api-redoc.html>
 
 ## Launch dev environment
 - Clone the repo ;
