@@ -36,6 +36,8 @@ class TsunamiEventResource extends BaseResource
             'maxWaterHeight' => (int)$this->maxWaterHeight,
             'tsMtAbe' => $this->tsMtAbe,
 
+            'tis' => $this->tis,
+
             'regionCode' => (int)$this->regionCode,
             'regionCodeLabel' => $this->regionCodeLabel,
 

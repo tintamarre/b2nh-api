@@ -10,12 +10,32 @@ class ImageController extends Controller
     * @OA\Get(
     * path="/images/{type}/{key}",
     * summary="Get image URL",
-    * description="Get events count per year",
-    * operationId="getEventsCountPerYear",
-    * tags={"events"},
+    * description="Get image url of event",
+    * operationId="getImageURL",
+    * tags={"Image"},
     * @OA\Response(
     *    response=200,
     *    description="Success"
+    * ),
+    *@OA\Parameter(
+    * name="type",
+    * in="path",
+    * description="Type of image",
+    * required=true,
+    * example="volcano",
+    * @OA\Schema(
+    *              type="string",
+    *          )
+    * ),
+    * @OA\Parameter(
+    * name="key",
+    * in="path",
+    * description="Key of image",
+    * required=true,
+    * example="etna",
+    * @OA\Schema(
+    *              type="string"
+    *          )
     * )
     * )
     */

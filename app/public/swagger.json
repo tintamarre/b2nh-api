@@ -15,7 +15,7 @@
     },
     "servers": [
         {
-            "url": "http://b2nh.tintamarre.be/api/v1/"
+            "url": "https://b2nh-api.tintamarre.be/api/v1/"
         }
     ],
     "paths": {
@@ -37,7 +37,7 @@
         "/earthquake_events/": {
             "get": {
                 "tags": [
-                    "Earthquake"
+                    "Events"
                 ],
                 "summary": "Get Earthquake events informations",
                 "description": "Get Earthquake events paginated",
@@ -49,24 +49,174 @@
                 }
             }
         },
-        "/earthquake_events/{earthquake_event_id}": {
+        "/events/random": {
             "get": {
                 "tags": [
-                    "Earthquake"
+                    "Events"
                 ],
-                "summary": "Get Earthquake event information",
-                "description": "Get Earthquake Event",
-                "operationId": "getEarthquakeEventInfo",
+                "summary": "Get a random event",
+                "operationId": "getRandomEvent",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/events/{type}/{id}": {
+            "get": {
+                "tags": [
+                    "Events"
+                ],
+                "summary": "Get a specific event by type and id",
+                "operationId": "getEvent",
                 "parameters": [
                     {
-                        "name": "earthquake_event_id",
+                        "name": "type",
                         "in": "path",
-                        "description": "ID of the event Earthquake",
+                        "description": "Event type",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "volcano",
+                                "earthquake",
+                                "tsunami"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Event id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/images/{type}/{key}": {
+            "get": {
+                "tags": [
+                    "Image"
+                ],
+                "summary": "Get image URL",
+                "description": "Get image url of event",
+                "operationId": "getImageURL",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "path",
+                        "description": "Type of image",
                         "required": true,
                         "schema": {
                             "type": "string"
                         },
-                        "example": "3"
+                        "example": "volcano"
+                    },
+                    {
+                        "name": "key",
+                        "in": "path",
+                        "description": "Key of image",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "etna"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/volcanoes_map/": {
+            "get": {
+                "tags": [
+                    "Volcano"
+                ],
+                "summary": "Get Volcanoes geographic informations",
+                "description": "Get Volcanoes lat/long as GeoJson",
+                "operationId": "getVolcanoInfo",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/filter_map/start/{start_year}/end/{end_year}": {
+            "get": {
+                "tags": [
+                    "Map"
+                ],
+                "summary": "Get events between start and end year in GeoJSON",
+                "operationId": "getEventsGeojson",
+                "parameters": [
+                    {
+                        "name": "start_year",
+                        "in": "path",
+                        "description": "Start year",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "-5000"
+                    },
+                    {
+                        "name": "end_year",
+                        "in": "path",
+                        "description": "End year",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "2021"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/filter_map_array/start/{start_year}/end/{end_year}": {
+            "get": {
+                "tags": [
+                    "Map"
+                ],
+                "summary": "Get events between start and end year in Array",
+                "operationId": "getEventsAsArray",
+                "parameters": [
+                    {
+                        "name": "start_year",
+                        "in": "path",
+                        "description": "Start year",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "-5000"
+                    },
+                    {
+                        "name": "end_year",
+                        "in": "path",
+                        "description": "End year",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "2021"
                     }
                 ],
                 "responses": {
@@ -79,38 +229,11 @@
         "/tsunami_events/": {
             "get": {
                 "tags": [
-                    "Tsunami"
+                    "Events"
                 ],
                 "summary": "Get Tsunami events informations",
                 "description": "Get Tsunami events paginated",
                 "operationId": "getTsunamiEventsInfo",
-                "responses": {
-                    "200": {
-                        "description": "Success"
-                    }
-                }
-            }
-        },
-        "/tsunami_events/{tsunami_event_id}": {
-            "get": {
-                "tags": [
-                    "Tsunami"
-                ],
-                "summary": "Get Tsunami Event information",
-                "description": "Get Tsunami event",
-                "operationId": "getTsunamiEventInfo",
-                "parameters": [
-                    {
-                        "name": "tsunami_event_id",
-                        "in": "path",
-                        "description": "ID of the event tsunami",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "8"
-                    }
-                ],
                 "responses": {
                     "200": {
                         "description": "Success"
@@ -133,7 +256,7 @@
                 }
             }
         },
-        "/volcanoes/{volcano_id}": {
+        "/volcanoes/{id}": {
             "get": {
                 "tags": [
                     "Volcano"
@@ -143,58 +266,16 @@
                 "operationId": "getVolcanoInfo",
                 "parameters": [
                     {
-                        "name": "volcano_id",
+                        "name": "id",
                         "in": "path",
                         "description": "ID of the volcano",
                         "required": true,
                         "schema": {
                             "type": "string"
                         },
-                        "example": "10102"
+                        "example": "10106"
                     }
                 ],
-                "responses": {
-                    "200": {
-                        "description": "Success"
-                    }
-                }
-            }
-        },
-        "/volcanoes/{volcano_id}/image": {
-            "get": {
-                "tags": [
-                    "Volcano"
-                ],
-                "summary": "Get an image (url) the volcano or a default one",
-                "description": "Get Volcano Image",
-                "operationId": "getVolcanoInfo",
-                "parameters": [
-                    {
-                        "name": "volcano_id",
-                        "in": "path",
-                        "description": "ID of the volcano",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "10102"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Success"
-                    }
-                }
-            }
-        },
-        "/volcanoes_map/": {
-            "get": {
-                "tags": [
-                    "Volcano"
-                ],
-                "summary": "Get Volcanoes geographic informations",
-                "description": "Get Volcanoes lat/long",
-                "operationId": "getVolcanoInfo",
                 "responses": {
                     "200": {
                         "description": "Success"
@@ -220,38 +301,11 @@
         "/volcano_events/": {
             "get": {
                 "tags": [
-                    "Eruption"
+                    "Events"
                 ],
                 "summary": "Get Volcano events informations",
                 "description": "Get Volcano events paginated",
                 "operationId": "getVolcanoEventsInfo",
-                "responses": {
-                    "200": {
-                        "description": "Success"
-                    }
-                }
-            }
-        },
-        "/volcano_events/{volcano_event_id}": {
-            "get": {
-                "tags": [
-                    "Eruption"
-                ],
-                "summary": "Get Volcano event information",
-                "description": "Get Volcano Event",
-                "operationId": "getVolcanoEventInfo",
-                "parameters": [
-                    {
-                        "name": "volcano_event_id",
-                        "in": "path",
-                        "description": "ID of the event volcano",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "6804"
-                    }
-                ],
                 "responses": {
                     "200": {
                         "description": "Success"

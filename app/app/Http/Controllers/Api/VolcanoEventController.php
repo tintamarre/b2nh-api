@@ -17,7 +17,7 @@ class VolcanoEventController extends Controller
     * summary="Get Volcano events informations",
     * description="Get Volcano events paginated",
     * operationId="getVolcanoEventsInfo",
-    * tags={"Eruption"},
+    * tags={"Events"},
     * @OA\Response(
     *    response=200,
     *    description="Success"

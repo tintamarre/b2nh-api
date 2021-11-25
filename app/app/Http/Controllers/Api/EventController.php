@@ -19,10 +19,9 @@ class EventController extends Controller
     /**
     * @OA\Get(
     * path="/events/random",
-    * summary="Get events count informations",
-    * description="Get events count per year",
-    * operationId="getEventsCountPerYear",
-    * tags={"events"},
+    * summary="Get a random event",
+    * operationId="getRandomEvent",
+    * tags={"Events"},
     * @OA\Response(
     *    response=200,
     *    description="Success"
@@ -31,12 +30,12 @@ class EventController extends Controller
     */
     public function random()
     {
-        $types = ['volcano', 'earthquake', 'tsunami'];
+        $types = ['irruption', 'earthquake', 'tsunami'];
 
         $type = $types[array_rand($types)];
 
         switch ($type) {
-            case 'volcano':
+            case 'irruption':
                 $event_id = VolcanoEvent::inRandomOrder()->first()->id;
                 break;
             case 'earthquake':
@@ -55,45 +54,41 @@ class EventController extends Controller
     /**
     * @OA\Get(
     * path="/events/{type}/{id}",
-    * summary="Get events count informations",
-    * description="Get events count per year",
-    * operationId="getEventsCountPerYear",
-    * tags={"events"},
+    * summary="Get a specific event by type and id",
+    * operationId="getEvent",
+    * tags={"Events"},
     * @OA\Response(
     *    response=200,
     *    description="Success"
-    * )
-    * )
-    */
-
-
-    /**
-    * @OA\Get(
-    * path="/volcanoes/{volcano_id}",
-    * summary="Get Volcano information",
-    * description="Get Volcano",
-    * operationId="getVolcanoInfo",
+    * ),
     * @OA\Parameter(
-    *          name="volcano_id",
-    *          description="ID of the volcano",
-    *          required=true,
-    *          in="path",
-    *          example="10102",
-    *          @OA\Schema(
-    *              type="string"
-    *          )
-    *      ),
-    * tags={"Volcano"},
-    * @OA\Response(
-    *    response=200,
-    *    description="Success"
+    *     name="type",
+    *     in="path",
+    *     description="Event type",
+    *     required=true,
+    *     @OA\Schema(
+    *         type="string",
+    *         enum={"irruption", "earthquake", "tsunami"}
+    *     )
+    * ),
+    * @OA\Parameter(
+    *     name="id",
+    *     in="path",
+    *     description="Event id",
+    *     required=true,
+    *     @OA\Schema(
+    *         type="integer"
+    *     )
     * )
     * )
     */
+
+
+
     public function show($type, $event_id)
     {
         switch ($type) {
-            case 'volcano':
+            case 'irruption':
 
                 return new VolcanoEventResource(VolcanoEvent::with(['volcano', 'tsunami_event','earthquake_event'])->find($event_id));
 
@@ -116,19 +111,6 @@ class EventController extends Controller
         }
     }
 
-    /**
-    * @OA\Get(
-    * path="/events/count_per_year",
-    * summary="Get events count informations",
-    * description="Get events count per year",
-    * operationId="getEventsCountPerYear",
-    * tags={"events"},
-    * @OA\Response(
-    *    response=200,
-    *    description="Success"
-    * )
-    * )
-    */
 
     public function count_per_years()
     {
@@ -153,21 +135,26 @@ class EventController extends Controller
                  ->select(DB::raw("'VEI' || ' ' || vei as name, count(id) as value"))
                  ->groupBy('name')
                  ->orderBy('vei', 'asc')
+                 ->where('vei', '>=', 3)
                  ->get();
 
+        $tsunami_events = DB::table('tsunami_events')
+                 ->select(DB::raw("'tis' || ' ' || (round(maxWaterHeight / 100) + 5) as name, count(id) as value"))
+                 ->groupBy('name')
+                 ->orderBy('maxWaterHeight', 'asc')
+                 ->where('maxWaterHeight', '>=', 30)
+                 ->get();
+
+                 
         $earthquake_events = DB::table('earthquake_events')
                  ->select(DB::raw("'EqMagni' || ' ' || round(eqMagnitude) as name, count(id) as value"))
                  ->groupBy('name')
                  ->orderBy('eqMagnitude', 'asc')
+                 ->where('eqMagnitude', '>=', 8.2)
                  ->get();
 
     
-        $tsunami_events = DB::table('tsunami_events')
-                 ->select(DB::raw("'MAX WATER' || ' ' || round(maxWaterHeight) as name, count(id) as value"))
-                 ->groupBy('name')
-                 ->orderBy('maxWaterHeight', 'asc')
-                 ->get();
-
+  
     
 
         return response()->json([
@@ -178,15 +165,16 @@ class EventController extends Controller
                     'name' => 'Volcanoes',
                     'children' => $volcano_events,
                 ],
+       
+                [
+                    'name' => 'Tsunamis',
+                    'children' => $tsunami_events,
+                ],
                 [
                     'name' => 'Earthquakes',
                     'children' => $earthquake_events,
 
                 ],
-                [
-                    'name' => 'Tsunamis',
-                    'children' => $tsunami_events,
-                ]
             ]
         ]);
     }

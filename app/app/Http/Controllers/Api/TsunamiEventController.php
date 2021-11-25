@@ -15,7 +15,7 @@ class TsunamiEventController extends Controller
     * summary="Get Tsunami events informations",
     * description="Get Tsunami events paginated",
     * operationId="getTsunamiEventsInfo",
-    * tags={"Tsunami"},
+    * tags={"Events"},
     * @OA\Response(
     *    response=200,
     *    description="Success"

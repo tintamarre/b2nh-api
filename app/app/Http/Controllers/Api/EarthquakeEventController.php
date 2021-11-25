@@ -15,7 +15,7 @@ class EarthquakeEventController extends Controller
     * summary="Get Earthquake events informations",
     * description="Get Earthquake events paginated",
     * operationId="getEarthquakeEventsInfo",
-    * tags={"Earthquake"},
+    * tags={"Events"},
     * @OA\Response(
     *    response=200,
     *    description="Success"

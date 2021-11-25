@@ -13,6 +13,8 @@
 |
 */
 
+\URL::forceScheme('https');
+
 $router->get('/', [
     'as' => 'api.base',
     'uses' => 'Api\ApiController@index',
@@ -56,6 +58,12 @@ $router->group(['prefix'=>'api/v1'], function () use ($router) {
     $router->get('/filter_map/start/{start_year}/end/{end_year}', [
         'as' => 'api.filter_map',
         'uses' => 'Api\MapController@filter_map',
+    ]);
+
+
+    $router->get('/filter_map_array/start/{start_year}/end/{end_year}', [
+        'as' => 'api.filter_map_array',
+        'uses' => 'Api\MapController@filter_map_array',
     ]);
 
 

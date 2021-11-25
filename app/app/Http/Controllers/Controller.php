@@ -43,6 +43,6 @@ class Controller extends BaseController
      *     type="http",
      *     scheme="bearer",
      * ),
-     * @OA\Server(url="http://b2nh.tintamarre.be/api/v1/")
+     * @OA\Server(url="https://b2nh-api.tintamarre.be/api/v1/")
      */
 }

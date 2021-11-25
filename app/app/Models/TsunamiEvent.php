@@ -41,12 +41,17 @@ class TsunamiEvent extends BaseEventModel
 
     public function getMeasureTypeAttribute()
     {
-        return 'maxWaterHeight';
+        return 'Soloviev-Imamura tsunami intensity scale';
     }
 
     public function getMeasureValueAttribute()
     {
-        return $this->maxWaterHeight;
+        return $this->tis;
+    }
+
+    public function getTisAttribute()
+    {
+        return round((0.5 + log($this->maxWaterHeight, 2)), 2);
     }
 
     public function getDamageAmountOrderLabelAttribute()
