@@ -81,13 +81,10 @@ class MapController extends Controller
     public function filter_map($start_year, $end_year)
     {
         $all_events = $this->get_events_collection($start_year, $end_year);
-        
+
         return response()->json([
             '_meta' => [
                 'count_all' => $all_events->count(),
-                'count_volcano_events' => $volcano_events->count(),
-                'count_tsunami_events' => $tsunami_events->count(),
-                'count_earthquake_events' => $earthquake_events->count(),
             ],
             "type" => "FeatureCollection",
             "features" => GeoJsonResource::collection($all_events)

@@ -22,7 +22,7 @@ class VolcanoesResource extends BaseResource
             'elevation' => $this->elevation,
             'morphology' => $this->morphology,
 
-            'geoJson' => json_decode($this->geoJson),
+            // 'geoJson' => json_decode($this->geoJson),
 
             'events_count' => (int)$this->events_count,
 

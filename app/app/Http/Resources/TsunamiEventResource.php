@@ -8,10 +8,10 @@ class TsunamiEventResource extends BaseResource
     {
         return [
             'id' => (int)$this->id,
-            'class_basename' => $this->class_basename,
 
+            'emoji' => "🌊",
             'type' => (string)$this->type,
-             'emoji' => "🌊",
+            'class_basename' => $this->class_basename,
 
             'year' => (int)$this->year,
             'month' => (int)$this-> month,
@@ -31,7 +31,7 @@ class TsunamiEventResource extends BaseResource
             'longitude' => (float)$this->longitude,
             'latitude' => (float)$this->latitude,
 
-            'geoJson' => json_decode($this->geoJson),
+            // 'geoJson' => json_decode($this->geoJson),
 
             'maxWaterHeight' => (int)$this->maxWaterHeight,
             'tsMtAbe' => $this->tsMtAbe,

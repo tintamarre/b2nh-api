@@ -31,7 +31,7 @@ class EarthquakeEventResource extends BaseResource
             'dateTime' => $this->dateTime->toCookieString(),
             'dateTimeDiffForHumans' => $this->dateTimeDiffForHumans,
 
-            'geoJson' => json_decode($this->geoJson),
+            // 'geoJson' => json_decode($this->geoJson),
 
             'area' => $this->area,
 
@@ -79,8 +79,8 @@ class EarthquakeEventResource extends BaseResource
             'tsunamiEventId' => (int)$this->tsunamiEventId,
             'volcanoEventId' => (int)$this->volcanoEventId,
 
-            'tsunami_event' => new TsunamiEventResource($this->whenLoaded('tsunami_event')),
-            'volcano_event' => new VolcanoEventResource($this->whenLoaded('volcano_event')),
+            // 'tsunami_event' => new TsunamiEventResource($this->whenLoaded('tsunami_event')),
+            // 'volcano_event' => new VolcanoEventResource($this->whenLoaded('volcano_event')),
 
             'tsunami_events' => TsunamiEventResource::collection($this->whenLoaded('tsunami_events')),
             'volcano_events' => VolcanoEventResource::collection($this->whenLoaded('volcano_events')),

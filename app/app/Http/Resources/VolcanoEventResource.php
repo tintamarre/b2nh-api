@@ -10,10 +10,10 @@ class VolcanoEventResource extends BaseResource
     {
         return [
             'id' => (int)$this->id,
-            'class_basename' => $this->class_basename,
 
-            'type' => (string)$this->type,
             'emoji' => "🌋",
+            'type' => (string)$this->type,
+            'class_basename' => $this->class_basename,
 
             'year' => (int)$this->year,
             'month' => (int)$this->month,
@@ -22,7 +22,7 @@ class VolcanoEventResource extends BaseResource
             'longitude' => (float)$this->longitude,
             'latitude' => (float)$this->latitude,
 
-            'geoJson' => json_decode($this->geoJson),
+            // 'geoJson' => json_decode($this->geoJson),
 
             'dateTime' => $this->dateTime->toCookieString(),
             'dateTimeDiffForHumans' => $this->dateTimeDiffForHumans,
@@ -65,8 +65,9 @@ class VolcanoEventResource extends BaseResource
             'volcanoLocationId' => (int)$this->volcanoLocationId,
 
 
-            'earthquake_event' => new EarthquakeEventResource($this->whenLoaded('earthquake_event')),
-            'tsunami_event' => new TsunamiEventResource($this->whenLoaded('tsunami_event')),
+            // 'earthquake_event' => new EarthquakeEventResource($this->whenLoaded('earthquake_event')),
+            // 'tsunami_event' => new TsunamiEventResource($this->whenLoaded('tsunami_event')),
+
             'volcano' => new VolcanoResource($this->whenLoaded('volcano')),
 
             'tsunami_events' => TsunamiEventResource::collection($this->whenLoaded('tsunami_events')),

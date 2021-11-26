@@ -3,6 +3,10 @@
 use Laravel\Lumen\Testing\DatabaseMigrations;
 use Laravel\Lumen\Testing\DatabaseTransactions;
 
+use App\Models\VolcanoEvent;
+use App\Models\EarthquakeEvent;
+use App\Models\TsunamiEvent;
+
 class baseTest extends TestCase
 {
     /** @test */
@@ -45,11 +49,44 @@ class baseTest extends TestCase
         // TODO: Should route with route() facade and get random params
         $this->calling('/api/v1/volcano_events');
     }
+
+    /** @test */
+    public function randomEventApiTest()
+    {
+        for ($i = 0; $i < 1000; $i++) {
+            $url = $this->getRandomEventUrl();
+    
+            echo $url . "\r\n";
+            $this->calling($url);
+        }
+    }
     
     private function calling($url)
     {
         $response = $this->call('GET', $url);
         $response->assertStatus(200);
         $response->assertSee('data');
+    }
+
+    private function getRandomEventUrl()
+    {
+        $types = ['earthquake', 'tsunami', 'irruption'];
+        $type = $types[array_rand($types)];
+
+        switch ($type) {
+            case 'irruption':
+                $event_id = VolcanoEvent::inRandomOrder()->first()->id;
+                break;
+            case 'earthquake':
+                $event_id = EarthquakeEvent::inRandomOrder()->first()->id;
+                break;
+            case 'tsunami':
+                $event_id = TsunamiEvent::inRandomOrder()->first()->id;
+                break;
+            default:
+                return response()->json(['error' => 'Invalid event type'], 400);
+        }
+        $url = route('api.events.show', ['type' => $type, 'event_id' => $event_id]);
+        return $url;
     }
 }

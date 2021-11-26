@@ -51,7 +51,11 @@ class TsunamiEvent extends BaseEventModel
 
     public function getTisAttribute()
     {
-        return round((0.5 + log($this->maxWaterHeight, 2)), 2);
+        if ($this->maxWaterHeight) {
+            return round((0.5 + log($this->maxWaterHeight, 2)), 2);
+        }
+
+        return null;
     }
 
     public function getDamageAmountOrderLabelAttribute()
