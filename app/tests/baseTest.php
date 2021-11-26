@@ -53,7 +53,7 @@ class baseTest extends TestCase
     /** @test */
     public function randomEventApiTest()
     {
-        for ($i = 0; $i < 1000; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             $url = $this->getRandomEventUrl();
     
             echo $url . "\r\n";

@@ -65,8 +65,8 @@ class VolcanoEventResource extends BaseResource
             'volcanoLocationId' => (int)$this->volcanoLocationId,
 
 
-            // 'earthquake_event' => new EarthquakeEventResource($this->whenLoaded('earthquake_event')),
-            // 'tsunami_event' => new TsunamiEventResource($this->whenLoaded('tsunami_event')),
+            'earthquake_event' => new EarthquakeEventResource($this->whenLoaded('earthquake_event')),
+            'tsunami_event' => new TsunamiEventResource($this->whenLoaded('tsunami_event')),
 
             'volcano' => new VolcanoResource($this->whenLoaded('volcano')),
 
