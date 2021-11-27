@@ -34,7 +34,7 @@ class VolcanoEvent extends BaseEventModel
 
     public function getTypeAttribute()
     {
-        return 'irruption';
+        return 'eruption';
     }
 
     public function getMeasureTypeAttribute()

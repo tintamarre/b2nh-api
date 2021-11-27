@@ -70,11 +70,11 @@ class baseTest extends TestCase
 
     private function getRandomEventUrl()
     {
-        $types = ['earthquake', 'tsunami', 'irruption'];
+        $types = ['earthquake', 'tsunami', 'eruption'];
         $type = $types[array_rand($types)];
 
         switch ($type) {
-            case 'irruption':
+            case 'eruption':
                 $event_id = VolcanoEvent::inRandomOrder()->first()->id;
                 break;
             case 'earthquake':

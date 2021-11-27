@@ -141,18 +141,21 @@ class MapController extends Controller
         $volcano_events = VolcanoEvent::whereBetween('year', [$start_year, $end_year])
         ->whereNotNull('latitude')
         ->whereNotNull('longitude')
+        ->whereNotNull('comments')
         ->where('vei', '>=', 4)
         ->get();
         
         $tsunami_events = TsunamiEvent::whereBetween('year', [$start_year, $end_year])
         ->whereNotNull('latitude')
         ->whereNotNull('longitude')
+        ->whereNotNull('comments')
         ->where('maxWaterHeight', '>=', 7)
         ->get();
 
         $earthquake_events = EarthquakeEvent::whereBetween('year', [$start_year, $end_year])
         ->whereNotNull('latitude')
         ->whereNotNull('longitude')
+        ->whereNotNull('comments')
         ->where('eqMagnitude', '>=', 8)
         ->get();
 

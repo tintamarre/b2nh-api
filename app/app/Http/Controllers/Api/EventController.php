@@ -30,12 +30,12 @@ class EventController extends Controller
     */
     public function random()
     {
-        $types = ['irruption', 'earthquake', 'tsunami'];
+        $types = ['eruption', 'earthquake', 'tsunami'];
 
         $type = $types[array_rand($types)];
 
         switch ($type) {
-            case 'irruption':
+            case 'eruption':
                 $event_id = VolcanoEvent::inRandomOrder()->first()->id;
                 break;
             case 'earthquake':
@@ -68,7 +68,7 @@ class EventController extends Controller
     *     required=true,
     *     @OA\Schema(
     *         type="string",
-    *         enum={"irruption", "earthquake", "tsunami"}
+    *         enum={"eruption", "earthquake", "tsunami"}
     *     )
     * ),
     * @OA\Parameter(
@@ -88,7 +88,7 @@ class EventController extends Controller
     public function show($type, $event_id)
     {
         switch ($type) {
-            case 'irruption':
+            case 'eruption':
 
                 return new VolcanoEventResource(VolcanoEvent::with(['volcano', 'tsunami_event','earthquake_event'])->find($event_id));
 

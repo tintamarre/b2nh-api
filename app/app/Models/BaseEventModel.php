@@ -44,7 +44,7 @@ class BaseEventModel extends BaseModel
     {
         $title = "";
 
-        if ($this->type == "irruption") {
+        if ($this->type == "eruption") {
             $title = $title . ' ' . $this->volcano->name;
         }
 
