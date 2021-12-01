@@ -37,7 +37,7 @@ class EarthquakeEvent extends BaseEventModel
 
     public function getMeasureTypeAttribute()
     {
-        return 'eqMagnitude';
+        return 'Magnitude';
     }
 
     public function getMeasureValueAttribute()

@@ -135,7 +135,8 @@ class EventController extends Controller
                  ->select(DB::raw("'VEI' || ' ' || vei as name, count(id) as value"))
                  ->groupBy('name')
                  ->orderBy('vei', 'asc')
-                 ->where('vei', '>=', 4)
+                 ->where('vei', '>=', 3)
+                 ->groupby('VolcanoLocationId')
                  ->get();
 
         $tsunami_events = DB::table('tsunami_events')

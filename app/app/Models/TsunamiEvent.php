@@ -41,7 +41,7 @@ class TsunamiEvent extends BaseEventModel
 
     public function getMeasureTypeAttribute()
     {
-        return 'Soloviev-Imamura tsunami intensity scale';
+        return 'Tsunami intensity';
     }
 
     public function getMeasureValueAttribute()

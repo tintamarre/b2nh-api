@@ -39,7 +39,7 @@ class VolcanoEvent extends BaseEventModel
 
     public function getMeasureTypeAttribute()
     {
-        return 'vei';
+        return 'VEI';
     }
 
     public function getMeasureValueAttribute()

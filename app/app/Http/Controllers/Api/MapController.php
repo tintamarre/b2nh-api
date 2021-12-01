@@ -142,13 +142,17 @@ class MapController extends Controller
         ->whereNotNull('latitude')
         ->whereNotNull('longitude')
         ->whereNotNull('comments')
-        ->where('vei', '>=', 4)
+        ->whereNotNull('vei')
+        ->where('vei', '>=', 3)
+        ->orderBy('vei', 'DESC')
+        ->groupBy('VolcanoLocationId')
         ->get();
         
         $tsunami_events = TsunamiEvent::whereBetween('year', [$start_year, $end_year])
         ->whereNotNull('latitude')
         ->whereNotNull('longitude')
         ->whereNotNull('comments')
+        ->whereNotNull('maxWaterHeight')
         ->where('maxWaterHeight', '>=', 7)
         ->get();
 
@@ -156,6 +160,7 @@ class MapController extends Controller
         ->whereNotNull('latitude')
         ->whereNotNull('longitude')
         ->whereNotNull('comments')
+        ->whereNotNull('eqMagnitude')
         ->where('eqMagnitude', '>=', 8)
         ->get();
 
