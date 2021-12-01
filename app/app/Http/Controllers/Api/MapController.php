@@ -143,7 +143,7 @@ class MapController extends Controller
         ->whereNotNull('longitude')
         ->whereNotNull('comments')
         ->whereNotNull('vei')
-        ->where('vei', '>=', 3)
+        // ->where('vei', '>=', 3)
         ->orderBy('vei', 'DESC')
         ->groupBy('VolcanoLocationId')
         ->get();
@@ -161,7 +161,7 @@ class MapController extends Controller
         ->whereNotNull('longitude')
         ->whereNotNull('comments')
         ->whereNotNull('eqMagnitude')
-        ->where('eqMagnitude', '>=', 8)
+        ->where('eqMagnitude', '>=', 8.2)
         ->get();
 
         return $all_events->concat($volcano_events)->concat($earthquake_events)->concat($tsunami_events);

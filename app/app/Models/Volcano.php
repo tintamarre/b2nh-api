@@ -12,12 +12,12 @@ class Volcano extends BaseModel
 
     public function volcano_events()
     {
-        return $this->hasMany('App\Models\VolcanoEvent', "volcanoLocationId");
+        return $this->hasMany('App\Models\VolcanoEvent', "volcanoLocationId")->orderBy('year', 'desc');
     }
 
     public function tsunami_events()
     {
-        return $this->hasMany('App\Models\TsunamiEvent', "volcanoLocationId");
+        return $this->hasMany('App\Models\TsunamiEvent', "volcanoLocationId")->orderBy('year', 'desc');
     }
 
  

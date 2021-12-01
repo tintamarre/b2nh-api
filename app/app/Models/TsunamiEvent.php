@@ -25,12 +25,12 @@ class TsunamiEvent extends BaseEventModel
     // HAS MANY
     public function volcano_events()
     {
-        return $this->hasMany('App\Models\VolcanoEvent', 'volcanoEventId');
+        return $this->hasMany('App\Models\VolcanoEvent', 'volcanoEventId')->orderBy('year', 'desc');
     }
 
     public function earthquake_events()
     {
-        return $this->hasMany('App\Models\EarthquakeEvent', 'earthquakeEventId');
+        return $this->hasMany('App\Models\EarthquakeEvent', 'earthquakeEventId')->orderBy('year', 'desc');
     }
 
     // Helper Attribute
