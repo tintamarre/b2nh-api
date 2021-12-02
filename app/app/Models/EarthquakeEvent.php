@@ -28,7 +28,6 @@ class EarthquakeEvent extends BaseEventModel
         return $this->hasMany('App\Models\TsunamiEvent', 'tsunamiEventId')->orderBy('year', 'desc');
     }
 
-
     // Helper Attribute
     public function getTypeAttribute()
     {

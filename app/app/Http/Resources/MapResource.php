@@ -15,7 +15,6 @@ class MapResource extends BaseResource
             'measure_value' => $this->measure_value,
             'measure_type' => $this->measure_type,
             'year' => (int)$this->year,
-            // 'dateTime' => $this->dateTime,
             'dateTimeForHumans' => $this->dateTimeDiffForHumans ?: "",
             'self_url' => $this->self_url,
         ];
