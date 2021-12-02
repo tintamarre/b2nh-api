@@ -147,7 +147,7 @@ class MapController extends Controller
         ->whereNotNull('vei')
         // ->addSelect('MAX(vei) as vei')
         // ->where('vei', '>=', 3)
-        ->select(DB::raw('MAX(vei) as vei'), 'year', 'latitude', 'longitude', 'comments', 'year', 'VolcanoLocationId')
+        ->select(DB::raw('MAX(vei) as vei'), 'year', 'latitude', 'longitude', 'comments', 'year', 'VolcanoLocationId', 'id')
         ->groupBy('VolcanoLocationId')
         ->get();
         
