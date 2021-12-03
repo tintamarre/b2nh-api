@@ -28,6 +28,9 @@ class EarthquakeEventResource extends BaseResource
             'locationName' => $this->locationName,
             'country' => $this->country,
 
+            'dateTimeForInfoPanel' => $this->dateTime->isoFormat('DD MMMM Y'),
+            'dateTimeForDolorean' => $this->dateTime->isoFormat('YYYY-MM-DD HH:mm:ss z'),
+
             'dateTime' => $this->dateTime->toCookieString(),
             'dateTimeDiffForHumans' => $this->dateTimeDiffForHumans,
 

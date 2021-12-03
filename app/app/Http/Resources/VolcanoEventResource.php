@@ -24,6 +24,9 @@ class VolcanoEventResource extends BaseResource
 
             // 'geoJson' => json_decode($this->geoJson),
 
+            'dateTimeForInfoPanel' => $this->dateTime->isoFormat('DD MMMM Y'),
+            'dateTimeForDolorean' => $this->dateTime->isoFormat('YYYY-MM-DD HH:mm:ss z'),
+
             'dateTime' => $this->dateTime->toCookieString(),
             'dateTimeDiffForHumans' => $this->dateTimeDiffForHumans,
   
