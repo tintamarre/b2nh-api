@@ -143,7 +143,7 @@ class MapController extends Controller
         $volcano_events = VolcanoEvent::whereBetween('year', [$start_year, $end_year])
         ->whereNotNull('latitude')
         ->whereNotNull('longitude')
-        // ->whereNotNull('comments')
+        ->whereNotNull('comments')
         ->whereNotNull('vei')
         // ->addSelect('MAX(vei) as vei')
         ->where('vei', '>=', 2)
@@ -163,7 +163,7 @@ class MapController extends Controller
         $tsunami_events = TsunamiEvent::whereBetween('year', [$start_year, $end_year])
         ->whereNotNull('latitude')
         ->whereNotNull('longitude')
-        // ->whereNotNull('comments')
+        ->whereNotNull('comments')
         ->whereNotNull('maxWaterHeight')
         ->where('maxWaterHeight', '>=', 7)
         ->get();
@@ -171,7 +171,7 @@ class MapController extends Controller
         $earthquake_events = EarthquakeEvent::whereBetween('year', [$start_year, $end_year])
         ->whereNotNull('latitude')
         ->whereNotNull('longitude')
-        // ->whereNotNull('comments')
+        ->whereNotNull('comments')
         ->whereNotNull('eqMagnitude')
         ->where('eqMagnitude', '>=', 8.2)
         ->get();

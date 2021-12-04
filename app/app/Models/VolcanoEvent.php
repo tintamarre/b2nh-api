@@ -26,7 +26,10 @@ class VolcanoEvent extends BaseEventModel
     // HAS MANY
     public function earthquake_events()
     {
-        return $this->hasMany('App\Models\EarthquateEvent', "earthquakeEventId");
+        return $this->hasMany('App\Models\EarthquateEvent', "earthquakeEventId")
+        ->orderBy('year', 'desc')
+        ->orderBy('month', 'desc')
+        ->orderBy('day', 'desc');;
     }
 
     // Helper Attribute
