@@ -59,6 +59,12 @@ class BaseEventModel extends BaseModel
         return route('api.events.show', ['type' => $this->type, 'event_id' => $this->id]);
     }
 
+    public function getDateTimeForInfoPanelAttribute()
+    {
+        return 'prout';
+        // 'dateTimeForInfoPanel' => $this->dateTime->isoFormat('DD MMMM Y'),
+
+    }
 
     public function getDateTimeDiffForHumansAttribute()
     {

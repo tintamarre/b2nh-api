@@ -20,7 +20,7 @@ class TsunamiEventResource extends BaseResource
             'minute' => (int)$this->minute,
             'second' => (int)$this->second,
 
-            'dateTimeForInfoPanel' => $this->dateTime->isoFormat('DD MMMM Y'),
+            'dateTimeForInfoPanel' => $this->dateTimeForInfoPanel,
             'dateTimeForDolorean' => $this->dateTime->isoFormat('YYYY-MM-DD HH:mm:ss z'),
 
             'dateTime' => $this->dateTime->toCookieString(),

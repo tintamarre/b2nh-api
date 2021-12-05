@@ -173,7 +173,10 @@ class MapController extends Controller
         ->whereNotNull('longitude')
         ->whereNotNull('comments')
         ->whereNotNull('eqMagnitude')
-        ->where('eqMagnitude', '>=', 8.2)
+        ->where('eqMagnitude', '>=', 4)
+        ->where('deathsAmountOrder', '>=', 3)
+        ->where('injuriesAmountOrder', '>=', 3)
+        ->where('damageAmountOrder', '>=', 3)
         ->get();
 
         return $all_events->concat($volcano_events)->concat($earthquake_events)->concat($tsunami_events);
