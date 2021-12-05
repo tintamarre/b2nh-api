@@ -61,9 +61,10 @@ class BaseEventModel extends BaseModel
 
     public function getDateTimeForInfoPanelAttribute()
     {
-        return 'prout';
-        // 'dateTimeForInfoPanel' => $this->dateTime->isoFormat('DD MMMM Y'),
-
+        if(empty($this->month)) {
+            return $this->dateTime->isoFormat('Y');
+        }
+        return $this->dateTime->isoFormat('DD MMMM Y');
     }
 
     public function getDateTimeDiffForHumansAttribute()

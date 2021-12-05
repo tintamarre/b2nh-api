@@ -155,6 +155,9 @@ class MapController extends Controller
              'year',
              'month',
              'day',
+             'hour',
+             'minute',
+             'second',
              'VolcanoLocationId',
              'id')
         ->groupBy('VolcanoLocationId')
@@ -179,6 +182,9 @@ class MapController extends Controller
         ->where('damageAmountOrder', '>=', 3)
         ->get();
 
-        return $all_events->concat($volcano_events)->concat($earthquake_events)->concat($tsunami_events);
+        return $all_events
+        ->concat($volcano_events)
+        ->concat($earthquake_events)
+        ->concat($tsunami_events);
     }
 }

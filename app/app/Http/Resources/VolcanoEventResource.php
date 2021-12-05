@@ -82,7 +82,7 @@ class VolcanoEventResource extends BaseResource
 
             'links' => [
                 'self' => route('api.events.show', [
-                    'type' => 'volcano',
+                    'type' => 'eruption',
                     'event_id' => $this->id
                 ]),
                 ]
